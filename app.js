@@ -18,41 +18,18 @@
 //======================================================
 
 
-window.addEventListener("load",()=>{
-
-
+window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
 
+    if (!loader) return;
 
-    if(loader){
+    loader.style.transition = "opacity 0.5s ease";
+    loader.style.opacity = "0";
 
-
-        setTimeout(()=>{
-
-
-            loader.style.opacity="0";
-
-
-            setTimeout(()=>{
-
-
-                loader.style.display="none";
-
-
-            },500);
-
-
-
-        },1000);
-
-
-
-    }
-
-
-
+    setTimeout(() => {
+        loader.remove();
+    }, 500);
 });
-
 
 
 
@@ -458,7 +435,7 @@ scrollProgress
 
 
 
-const themeButton = document.getElementById("themeToggle");
+const themeButton = document.getElementById("themeButton");
 
 
 
@@ -1071,7 +1048,7 @@ accordionButtons.forEach(button=>{
 
 const printButton = document.getElementById(
 
-    "printPage"
+    "printButton"
 
 );
 
