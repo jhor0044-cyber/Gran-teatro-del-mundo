@@ -2,181 +2,9919 @@
 <html lang="es">
 
 <head>
+    <!-- ==========================================
+         PROYECTO:
+         El Gran Teatro del Mundo
+         Autor: Pedro Calderón de la Barca
+         Desarrollado para Visual Studio Code
+    =========================================== -->
+
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Gran Teatro del Mundo</title>
+
+    <title>El Gran Teatro del Mundo | Pedro Calderón de la Barca</title>
+
+    <meta name="description"
+        content="Sitio web educativo sobre El Gran Teatro del Mundo de Pedro Calderón de la Barca.">
+
+    <meta name="keywords"
+        content="Calderón de la Barca, teatro barroco, siglo de oro, auto sacramental, literatura española">
+
+    <meta name="author" content="Proyecto Educativo">
+
+    <!-- =====================
+         Google Fonts
+    ====================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- =====================
+          Font Awesome
+    ====================== -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- =====================
+            CSS
+    ====================== -->
 
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
+    <!-- LOADER INICIAL -->
 
-    <div class="overlay">
+<div class="loader">
 
-        <h1>El Gran Teatro del Mundo</h1>
+    <i class="fa-solid fa-masks-theater"></i>
 
-        <p>Una de las obras más importantes del teatro barroco español.</p>
+</div>
 
-        <a href="#contenido" class="boton">Descubrir</a>
+
+<!-- BARRA DE PROGRESO -->
+
+<div class="scroll-progress"></div>
+    <!--========================
+          LOADER
+    =========================-->
+
+    <div id="loader">
+
+        <div class="loader-container">
+
+            <i class="fa-solid fa-masks-theater loader-icon"></i>
+
+            <h2>El Gran Teatro del Mundo</h2>
+
+            <p>Cargando experiencia...</p>
+
+        </div>
 
     </div>
 
-</header>
+    <!--========================
+        BARRA DE PROGRESO
+    =========================-->
 
-<main id="contenido">
+    <div id="progress-bar"></div>
 
-<section class="intro">
+    <!--========================
+       PARTÍCULAS DE FONDO
+    =========================-->
 
-<img src="img/teatro.jpg" alt="Teatro">
+    <div id="particles"></div>
 
-<div>
+    <!--========================
+         BOTÓN VOLVER ARRIBA
+    =========================-->
 
-<h2>¿Qué es?</h2>
+    <button id="btnTop">
 
-<p>
-"El Gran Teatro del Mundo" es un auto sacramental escrito por
-Pedro Calderón de la Barca durante el Siglo de Oro español.
-La obra representa la vida como un escenario donde cada persona
-recibe un papel otorgado por Dios y, al finalizar la representación,
-todos son juzgados según sus acciones.
-</p>
+        <i class="fa-solid fa-arrow-up"></i>
 
-</div>
+    </button>
+
+    <!--========================
+          CABECERA
+    =========================-->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-masks-theater"></i>
+
+                <span>El Gran Teatro del Mundo</span>
+
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="#inicio">Inicio</a></li>
+
+                <li><a href="#indice">Índice</a></li>
+
+                <li><a href="#contexto">Contexto</a></li>
+
+                <li><a href="#autor">Autor</a></li>
+
+                <li><a href="#obra">La Obra</a></li>
+
+                <li><a href="#personajes">Personajes</a></li>
+
+                <li><a href="#galeria">Galería</a></li>
+
+                <li><a href="#bibliografia">Bibliografía</a></li>
+
+            </ul>
+
+            <div class="nav-buttons">
+
+                <button id="themeButton">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <button id="printButton">
+
+                    <i class="fa-solid fa-print"></i>
+
+                </button>
+
+            </div>
+
+            <div class="menu-mobile">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!--========================
+            MAIN
+    =========================-->
+
+    <main>
+
+        <!--========================
+            INFORMACIÓN SUPERIOR
+        =========================-->
+
+        <section class="top-info">
+
+            <div class="top-card">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <div>
+
+                    <h4>Fecha actual</h4>
+
+                    <span id="currentDate"></span>
+
+                </div>
+
+            </div>
+
+            <div class="top-card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <div>
+
+                    <h4>Hora actual</h4>
+
+                    <span id="clock"></span>
+
+                </div>
+
+            </div>
+
+            <div class="top-card">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <div>
+
+                    <h4>Movimiento</h4>
+
+                    <span>Barroco Español</span>
+
+                </div>
+
+            </div>
+
+            <div class="top-card">
+
+                <i class="fa-solid fa-landmark"></i>
+
+                <div>
+
+                    <h4>Autor</h4>
+
+                    <span>Pedro Calderón de la Barca</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--======================================================
+                        HERO SECTION
+        =======================================================-->
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    Literatura del Siglo de Oro Español
+
+                </span>
+
+                <h1>
+
+                    El Gran <br>
+
+                    Teatro del Mundo
+
+                </h1>
+
+                <h2>
+
+                    Una obra maestra del teatro barroco que representa
+                    la vida humana como un gran escenario donde cada
+                    persona interpreta un papel antes del juicio final.
+
+                </h2>
+
+                <div class="hero-author">
+
+                    <i class="fa-solid fa-feather"></i>
+
+                    Pedro Calderón de la Barca
+
+                </div>
+
+                <div class="hero-buttons">
+
+                    <a href="#indice" class="btn btn-primary">
+
+                        <i class="fa-solid fa-book"></i>
+
+                        Explorar
+
+                    </a>
+
+                    <button id="downloadPDF" class="btn btn-secondary">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        Descargar Resumen
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Pedro_Calder%C3%B3n_de_la_Barca.jpg"
+                    alt="Pedro Calderón de la Barca">
+
+            </div>
+
+        </section>
+                <!--======================================================
+                    CARRUSEL DE IMÁGENES
+        =======================================================-->
+
+        <section class="hero-slider">
+
+            <div class="slider-container">
+
+                <div class="slide active">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Corral_de_Comedias_de_Almagro.jpg"
+                        alt="Corral de Comedias de Almagro">
+                </div>
+
+                <div class="slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Pedro_Calder%C3%B3n_de_la_Barca.jpg"
+                        alt="Pedro Calderón de la Barca">
+                </div>
+
+                <div class="slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Palacio_Real_de_Madrid_Teatro.jpg"
+                        alt="Teatro barroco">
+                </div>
+
+                <div class="slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/El_Escorial_Biblioteca.jpg"
+                        alt="Biblioteca antigua">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--======================================================
+                    ESTADÍSTICAS
+        =======================================================-->
+
+        <section class="statistics">
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <h3 id="counter1">0</h3>
+
+                <p>Años de influencia literaria</p>
+
+            </article>
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3 id="counter2">0</h3>
+
+                <p>Personajes principales</p>
+
+            </article>
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-scroll"></i>
+
+                <h3 id="counter3">0</h3>
+
+                <p>Obras destacadas del autor</p>
+
+            </article>
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-landmark"></i>
+
+                <h3 id="counter4">0</h3>
+
+                <p>Siglos de permanencia</p>
+
+            </article>
+
+        </section>
+
+        <!--======================================================
+                    FRASE DESTACADA
+        =======================================================-->
+
+        <section class="intro-quote">
+
+            <blockquote>
+
+                <i class="fa-solid fa-quote-left"></i>
+
+                <p>
+
+                    La vida es un escenario donde cada ser humano
+                    interpreta un papel. Lo verdaderamente importante
+                    no es el personaje recibido, sino la manera en que
+                    se representa hasta el final.
+
+                </p>
+
+                <footer>
+
+                    Inspirado en
+                    <strong>El gran teatro del mundo</strong>
+
+                </footer>
+
+            </blockquote>
+
+        </section>
+
+        <!--======================================================
+                        ÍNDICE
+        =======================================================-->
+
+        <section id="indice" class="index-section">
+
+            <div class="section-title">
+
+                <h2>
+
+                    <i class="fa-solid fa-list"></i>
+
+                    Índice del contenido
+
+                </h2>
+
+                <p>
+
+                    Explora cada apartado de esta página para conocer
+                    en profundidad la obra, su contexto histórico,
+                    sus personajes y el legado de Pedro Calderón de la Barca.
+
+                </p>
+
+            </div>
+
+            <div class="index-grid">
+
+                <a href="#contexto" class="index-card">
+                    <i class="fa-solid fa-landmark"></i>
+                    <h3>Contexto histórico</h3>
+                    <p>El Siglo de Oro, el Barroco y la Contrarreforma.</p>
+                </a>
+
+                <a href="#autor" class="index-card">
+                    <i class="fa-solid fa-feather"></i>
+                    <h3>Biografía</h3>
+                    <p>Vida y legado de Pedro Calderón de la Barca.</p>
+                </a>
+
+                <a href="#obra" class="index-card">
+                    <i class="fa-solid fa-book"></i>
+                    <h3>La obra</h3>
+                    <p>Origen, género, estructura e importancia.</p>
+                </a>
+
+                <a href="#resumen" class="index-card">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <h3>Resumen</h3>
+                    <p>Síntesis completa de la obra.</p>
+                </a>
+
+                <a href="#personajes" class="index-card">
+                    <i class="fa-solid fa-masks-theater"></i>
+                    <h3>Personajes</h3>
+                    <p>Los protagonistas y su simbolismo.</p>
+                </a>
+
+                <a href="#valores" class="index-card">
+                    <i class="fa-solid fa-heart"></i>
+                    <h3>Valores</h3>
+                    <p>Las enseñanzas morales presentes en la obra.</p>
+                </a>
+
+                <a href="#temas" class="index-card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Temas principales</h3>
+                    <p>La vida, la muerte, el destino y la igualdad.</p>
+                </a>
+
+                <a href="#mensaje" class="index-card">
+                    <i class="fa-solid fa-comments"></i>
+                    <h3>Mensaje</h3>
+                    <p>La enseñanza central de la obra.</p>
+                </a>
+
+                <a href="#frases" class="index-card">
+                    <i class="fa-solid fa-quote-right"></i>
+                    <h3>Frases</h3>
+                    <p>Reflexiones memorables del auto sacramental.</p>
+                </a>
+
+                <a href="#curiosidades" class="index-card">
+                    <i class="fa-solid fa-star"></i>
+                    <h3>Curiosidades</h3>
+                    <p>Datos interesantes sobre Calderón y su obra.</p>
+                </a>
+
+                <a href="#timeline" class="index-card">
+                    <i class="fa-solid fa-timeline"></i>
+                    <h3>Línea del tiempo</h3>
+                    <p>Desde 1600 hasta la actualidad.</p>
+                </a>
+
+                <a href="#galeria" class="index-card">
+                    <i class="fa-solid fa-image"></i>
+                    <h3>Galería</h3>
+                    <p>Imágenes del teatro barroco y sus personajes.</p>
+                </a>
+
+                <a href="#video" class="index-card">
+                    <i class="fa-brands fa-youtube"></i>
+                    <h3>Video</h3>
+                    <p>Material audiovisual para ampliar el aprendizaje.</p>
+                </a>
+
+                <a href="#datos" class="index-card">
+                    <i class="fa-solid fa-table"></i>
+                    <h3>Datos generales</h3>
+                    <p>Información resumida sobre la obra.</p>
+                </a>
+
+                <a href="#conclusion" class="index-card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>Conclusión</h3>
+                    <p>Importancia de la obra en la actualidad.</p>
+                </a>
+
+                <a href="#bibliografia" class="index-card">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <h3>Bibliografía</h3>
+                    <p>Fuentes académicas y de consulta.</p>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!--======================================================
+                FIN DE LA PARTE 1.1
+                LA SIGUIENTE ENTREGA COMIENZA
+                CON EL CONTEXTO HISTÓRICO
+        =======================================================-->
+                <!--======================================================
+                    CONTEXTO HISTÓRICO
+        =======================================================-->
+
+        <section id="contexto" class="history-section">
+
+            <div class="section-title">
+
+                <span class="section-subtitle">
+                    <i class="fa-solid fa-landmark"></i>
+                    Contexto histórico
+                </span>
+
+                <h2>El mundo en el que nació <em>El gran teatro del mundo</em></h2>
+
+                <p>
+                    Comprender el contexto histórico en el que Pedro Calderón de la
+                    Barca escribió esta obra permite valorar mejor su significado.
+                    El <strong>Siglo de Oro Español</strong>, el pensamiento religioso,
+                    el estilo barroco y la organización social del siglo XVII
+                    influyeron profundamente en la literatura de la época. Estas
+                    circunstancias dieron origen a obras que combinaban belleza
+                    artística, reflexión filosófica y enseñanzas morales.
+                </p>
+
+            </div>
+
+            <!--========================
+                    BANNER
+            =========================-->
+
+            <article class="history-banner glass-card">
+
+                <div class="history-banner-image">
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Plaza_Mayor_de_Madrid_%28Museo_de_Historia%29.jpg"
+                        alt="Representación de la España del Siglo de Oro"
+                        loading="lazy"
+                        decoding="async">
+
+                </div>
+
+                <div class="history-banner-content">
+
+                    <h3>
+                        Un período de esplendor cultural
+                    </h3>
+
+                    <p>
+                        Entre los siglos XVI y XVII, España vivió una de las etapas
+                        más brillantes de su historia en el ámbito de la literatura,
+                        la pintura, la arquitectura y el teatro. Este período,
+                        conocido como <strong>Siglo de Oro</strong>, reunió a grandes
+                        autores como Miguel de Cervantes, Lope de Vega, Tirso de Molina,
+                        Francisco de Quevedo, Luis de Góngora y Pedro Calderón de la
+                        Barca, quienes transformaron para siempre la literatura en
+                        lengua española.
+                    </p>
+
+                    <p>
+                        El teatro adquirió una enorme importancia como medio de
+                        entretenimiento, educación y reflexión moral. Las
+                        representaciones reunían a personas de diferentes clases
+                        sociales y transmitían valores religiosos, éticos y humanos
+                        mediante historias llenas de simbolismo.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!--========================
+                SIGLO DE ORO ESPAÑOL
+            =========================-->
+
+            <article class="history-card glass-card">
+
+                <div class="history-image">
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/7/72/Corral_de_Comedias_Almagro.jpg"
+                        alt="Corral de Comedias de Almagro"
+                        loading="lazy"
+                        decoding="async">
+
+                </div>
+
+                <div class="history-content">
+
+                    <h3>
+
+                        <i class="fa-solid fa-crown"></i>
+
+                        El Siglo de Oro Español
+
+                    </h3>
+
+                    <p>
+                        El Siglo de Oro es el nombre con el que se conoce al período
+                        de mayor desarrollo artístico y literario de España. Aunque
+                        no corresponde exactamente a un siglo cronológico, suele
+                        ubicarse entre finales del siglo XV y finales del siglo XVII.
+                        Durante estos años surgieron algunas de las obras más
+                        importantes de la literatura universal y florecieron distintas
+                        manifestaciones culturales que reflejaban tanto la grandeza
+                        como las contradicciones de la sociedad española.
+                    </p>
+
+                    <p>
+                        La expansión del Imperio español permitió un intenso
+                        intercambio cultural con otros territorios. Al mismo tiempo,
+                        las universidades, las imprentas y las cortes reales
+                        favorecieron la difusión del conocimiento. Los escritores
+                        encontraron en este ambiente un espacio ideal para desarrollar
+                        nuevas formas de expresión literaria que aún hoy siguen siendo
+                        estudiadas en todo el mundo.
+                    </p>
+
+                    <p>
+                        El teatro ocupó un lugar privilegiado dentro de la vida
+                        cotidiana. Los corrales de comedias recibían diariamente a
+                        espectadores de distintas clases sociales, convirtiéndose en
+                        centros de entretenimiento y también de reflexión sobre la
+                        condición humana.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!--========================
+                DATOS DESTACADOS
+            =========================-->
+
+            <div class="history-highlights">
+
+                <article class="highlight-card">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <h4>Literatura</h4>
+
+                    <p>
+                        Surgieron obras fundamentales que marcaron la historia de la
+                        literatura española y universal.
+                    </p>
+
+                </article>
+
+                <article class="highlight-card">
+
+                    <i class="fa-solid fa-masks-theater"></i>
+
+                    <h4>Teatro</h4>
+
+                    <p>
+                        Los corrales de comedias se convirtieron en escenarios donde
+                        el arte llegaba a públicos de todas las clases sociales.
+                    </p>
+
+                </article>
+
+                <article class="highlight-card">
+
+                    <i class="fa-solid fa-palette"></i>
+
+                    <h4>Arte</h4>
+
+                    <p>
+                        Pintores como Velázquez, Murillo y Zurbarán consolidaron una
+                        de las etapas más brillantes de la pintura española.
+                    </p>
+
+                </article>
+
+                <article class="highlight-card">
+
+                    <i class="fa-solid fa-church"></i>
+
+                    <h4>Religión</h4>
+
+                    <p>
+                        La fe católica tuvo una fuerte influencia en la educación,
+                        la política, la cultura y las expresiones artísticas.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <!--======================================================
+                CONTINÚA EN LA PARTE 1.2B:
+                LA CONTRARREFORMA Y EL BARROCO
+            =======================================================-->
+            <!--======================================================
+                LA CONTRARREFORMA
+=======================================================-->
+
+<article class="history-card reverse glass-card">
+
+    <div class="history-image">
+
+        <img src="img/contexto/contrarreforma.jpg"
+            alt="Representación artística de la Contrarreforma"
+            loading="lazy">
+
+    </div>
+
+    <div class="history-content">
+
+        <span class="card-subtitle">
+
+            <i class="fa-solid fa-cross"></i>
+
+            Contexto religioso
+
+        </span>
+
+        <h3>
+
+            La Contrarreforma
+
+        </h3>
+
+        <p>
+
+            Durante el siglo XVI la Iglesia católica inició un amplio
+            proceso de renovación conocido como <strong>Contrarreforma</strong>.
+            Este movimiento surgió como respuesta a la Reforma Protestante
+            impulsada por Martín Lutero y otros reformadores europeos. Su
+            objetivo principal fue fortalecer la doctrina católica, renovar
+            la vida espiritual de los fieles y reafirmar la autoridad de la
+            Iglesia.
+
+        </p>
+
+        <p>
+
+            Uno de los acontecimientos más importantes de este período fue
+            el <strong>Concilio de Trento</strong>, celebrado entre 1545 y
+            1563. En él se definieron numerosos aspectos doctrinales,
+            disciplinarios y pastorales que marcarían profundamente la vida
+            religiosa europea durante los siglos siguientes.
+
+        </p>
+
+        <p>
+
+            España desempeñó un papel fundamental en la difusión de las ideas
+            de la Contrarreforma. La monarquía española defendió con firmeza
+            la fe católica y promovió la producción de obras artísticas y
+            literarias que transmitieran enseñanzas religiosas al pueblo.
+
+        </p>
+
+        <p>
+
+            En este ambiente surgieron numerosos escritores que utilizaron el
+            teatro como una herramienta educativa. Pedro Calderón de la Barca
+            fue uno de los autores que mejor representó estos ideales mediante
+            sus famosos <strong>autos sacramentales</strong>, entre ellos
+            <em>El gran teatro del mundo</em>.
+
+        </p>
+
+    </div>
+
+</article>
+
+<!--======================================================
+            IMPORTANCIA PARA LA LITERATURA
+=======================================================-->
+
+<section class="glass-card info-panel">
+
+    <div class="panel-icon">
+
+        <i class="fa-solid fa-book-bible"></i>
+
+    </div>
+
+    <div class="panel-content">
+
+        <h3>
+
+            ¿Cómo influyó la Contrarreforma en la literatura?
+
+        </h3>
+
+        <p>
+
+            La literatura dejó de ser únicamente un medio de entretenimiento
+            para convertirse también en una poderosa herramienta de enseñanza.
+            Muchas obras buscaban transmitir valores cristianos como la fe,
+            la humildad, la obediencia, la solidaridad y la responsabilidad
+            moral.
+
+        </p>
+
+        <p>
+
+            Los escritores recurrieron al simbolismo, las alegorías y las
+            representaciones teatrales para explicar conceptos religiosos de
+            forma comprensible para todos los públicos.
+
+        </p>
+
+    </div>
 
 </section>
 
-<section class="autor">
+<!--======================================================
+                TARJETAS INFORMATIVAS
+=======================================================-->
 
-<div>
+<div class="history-highlights">
 
-<h2>El autor</h2>
+    <article class="highlight-card">
 
-<p>
+        <i class="fa-solid fa-church"></i>
 
-Pedro Calderón de la Barca fue uno de los dramaturgos más importantes
-de la literatura española. Sus obras se caracterizan por la profundidad
-filosófica, el simbolismo y la reflexión sobre la vida, el destino y la fe.
+        <h4>Iglesia Católica</h4>
 
-</p>
+        <p>
+
+            Reforzó su papel como guía espiritual y promovió el arte como
+            medio para enseñar la doctrina cristiana.
+
+        </p>
+
+    </article>
+
+    <article class="highlight-card">
+
+        <i class="fa-solid fa-scroll"></i>
+
+        <h4>Autos sacramentales</h4>
+
+        <p>
+
+            Obras teatrales alegóricas representadas durante la festividad
+            del Corpus Christi para explicar los principios de la fe.
+
+        </p>
+
+    </article>
+
+    <article class="highlight-card">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h4>Educación del pueblo</h4>
+
+        <p>
+
+            El teatro permitió transmitir enseñanzas religiosas incluso a
+            personas que no sabían leer ni escribir.
+
+        </p>
+
+    </article>
+
+    <article class="highlight-card">
+
+        <i class="fa-solid fa-scale-balanced"></i>
+
+        <h4>Moral</h4>
+
+        <p>
+
+            Las obras insistían en la importancia de vivir con justicia,
+            responsabilidad y respeto hacia los demás.
+
+        </p>
+
+    </article>
 
 </div>
 
-<img src="img/calderon.jpg" alt="Pedro Calderón">
+<!--======================================================
+                CITA DESTACADA
+=======================================================-->
+
+<blockquote class="historic-quote">
+
+    <i class="fa-solid fa-quote-left"></i>
+
+    <p>
+
+        El teatro barroco español no solo buscaba entretener al espectador;
+        también pretendía educarlo, mover su conciencia y fortalecer su fe
+        mediante historias llenas de simbolismo y reflexión moral.
+
+    </p>
+
+</blockquote>
+
+<!--======================================================
+        CONTINÚA EN LA PARTE 1.2B-2:
+        EL BARROCO
+=======================================================-->
+<!--======================================================
+                    EL BARROCO
+=======================================================-->
+
+<article class="history-card glass-card">
+
+    <div class="history-image">
+
+        <img src="img/contexto/barroco.jpg"
+            alt="Arte y arquitectura del Barroco"
+            loading="lazy">
+
+    </div>
+
+    <div class="history-content">
+
+        <span class="card-subtitle">
+
+            <i class="fa-solid fa-palette"></i>
+
+            Movimiento artístico
+
+        </span>
+
+        <h3>
+
+            El Barroco
+
+        </h3>
+
+        <p>
+
+            El Barroco fue el movimiento artístico y cultural predominante
+            durante los siglos XVII y parte del XVIII. Se caracterizó por su
+            riqueza visual, el uso de contrastes, el simbolismo y la búsqueda
+            de provocar emociones intensas en el espectador. La literatura,
+            la pintura, la música y la arquitectura barrocas intentaban
+            impresionar y hacer reflexionar sobre la condición humana.
+
+        </p>
+
+        <p>
+
+            En la literatura española, el Barroco destacó por el empleo de
+            un lenguaje elaborado, metáforas, alegorías y recursos retóricos.
+            Los escritores buscaban que el lector interpretara distintos
+            niveles de significado, combinando belleza estética con profundas
+            reflexiones filosóficas y religiosas.
+
+        </p>
+
+        <p>
+
+            Pedro Calderón de la Barca llevó estas características a su
+            máxima expresión. En <em>El gran teatro del mundo</em>, utiliza
+            personajes alegóricos para representar a toda la humanidad y
+            mostrar que la vida es pasajera y que todas las personas serán
+            juzgadas por sus acciones, sin importar el papel que desempeñen
+            en la sociedad.
+
+        </p>
+
+    </div>
+
+</article>
+
+<!--======================================================
+        CARACTERÍSTICAS DEL BARROCO
+=======================================================-->
+
+<section class="features-grid">
+
+    <article class="feature-card glass-card">
+
+        <i class="fa-solid fa-masks-theater"></i>
+
+        <h4>Teatralidad</h4>
+
+        <p>
+            El teatro se convirtió en una de las expresiones artísticas más
+            importantes del Barroco y en un medio para transmitir ideas
+            religiosas y sociales.
+        </p>
+
+    </article>
+
+    <article class="feature-card glass-card">
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+        <h4>Simbolismo</h4>
+
+        <p>
+            Los personajes, objetos y acciones representaban conceptos
+            abstractos como la fe, la justicia, la riqueza o la muerte.
+        </p>
+
+    </article>
+
+    <article class="feature-card glass-card">
+
+        <i class="fa-solid fa-hourglass-half"></i>
+
+        <h4>Fugacidad</h4>
+
+        <p>
+            Una de las ideas centrales del Barroco era que la vida es breve y
+            que las riquezas materiales son temporales.
+        </p>
+
+    </article>
+
+    <article class="feature-card glass-card">
+
+        <i class="fa-solid fa-scale-balanced"></i>
+
+        <h4>Moral</h4>
+
+        <p>
+            Muchas obras proponían reflexionar sobre el comportamiento
+            humano y la responsabilidad de cada persona ante Dios.
+        </p>
+
+    </article>
 
 </section>
 
-<section class="cards">
+<!--======================================================
+        EL BARROCO Y LA OBRA
+=======================================================-->
 
-<h2>Personajes principales</h2>
+<section class="glass-card relation-panel">
 
-<div class="contenedor-cards">
+    <div class="panel-content">
 
-<div class="card">
+        <h3>
 
-<h3>El Autor</h3>
+            El Barroco en <em>El gran teatro del mundo</em>
 
-<p>Dios, quien organiza la representación del mundo.</p>
+        </h3>
 
-</div>
+        <p>
 
-<div class="card">
+            Esta obra reúne muchas de las características propias del
+            Barroco. Su estructura alegórica convierte la existencia humana
+            en una representación teatral donde cada individuo recibe un
+            papel determinado. Reyes, ricos, pobres y campesinos comparten
+            un mismo destino: todos deberán rendir cuentas de sus actos al
+            finalizar la representación.
 
-<h3>El Rey</h3>
+        </p>
 
-<p>Representa el poder y la responsabilidad.</p>
+        <p>
 
-</div>
+            Calderón no pretende destacar las diferencias sociales, sino
+            recordar que todas las personas poseen la misma dignidad ante
+            Dios. El verdadero valor de cada personaje no depende de su
+            posición o riqueza, sino de la forma en que desempeña el papel
+            que le ha sido confiado.
 
-<div class="card">
+        </p>
 
-<h3>El Rico</h3>
-
-<p>Simboliza la riqueza y las tentaciones materiales.</p>
-
-</div>
-
-<div class="card">
-
-<h3>El Pobre</h3>
-
-<p>Representa la humildad y la fe.</p>
-
-</div>
-
-<div class="card">
-
-<h3>La Hermosura</h3>
-
-<p>Representa la belleza pasajera.</p>
-
-</div>
-
-<div class="card">
-
-<h3>El Labrador</h3>
-
-<p>Simboliza el trabajo y la sencillez.</p>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<section class="imagen">
+<!--======================================================
+                CITA DESTACADA
+=======================================================-->
 
-<img src="img/escenario.jpg" alt="Escenario">
+<blockquote class="historic-quote">
+
+    <i class="fa-solid fa-quote-left"></i>
+
+    <p>
+
+        El Barroco convirtió el arte en un espejo de la condición humana,
+        mostrando que el poder, la belleza y la riqueza son pasajeros,
+        mientras que las acciones realizadas durante la vida tienen un valor
+        permanente.
+
+    </p>
+
+</blockquote>
+
+<!--======================================================
+            RESUMEN DEL CONTEXTO HISTÓRICO
+=======================================================-->
+
+<section class="history-summary glass-card">
+
+    <h3>
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        En síntesis
+
+    </h3>
+
+    <p>
+
+        El <strong>Siglo de Oro Español</strong>, la
+        <strong>Contrarreforma</strong> y el
+        <strong>Barroco</strong> crearon el ambiente intelectual y religioso
+        en el que Pedro Calderón de la Barca escribió
+        <em>El gran teatro del mundo</em>. Estas influencias permitieron
+        desarrollar una obra profundamente simbólica que combina literatura,
+        filosofía y espiritualidad para reflexionar sobre la igualdad, la
+        responsabilidad y el sentido de la vida.
+
+    </p>
+    
+    <img src="img/contexto/teatro-religioso.jpg" alt="Teatro Religioso">
+    <img src="img/contexto/auto-sacramental.jpg" alt="Auto Sacramental">
 
 </section>
 
-<section class="mensaje">
+<!--======================================================
+        FIN DE LA PARTE 1.2B
 
-<h2>Mensaje de la obra</h2>
+        LA SIGUIENTE ENTREGA CONTENDRÁ:
 
-<p>
+        ✔ El teatro religioso
+        ✔ La sociedad española del siglo XVII
+        ✔ Más imágenes
+        ✔ Galería temática
+        ✔ Cierre completo del Contexto Histórico
+=======================================================-->
+<!--======================================================
+                TEATRO RELIGIOSO BARROCO
+=======================================================-->
 
-La obra enseña que todas las personas, sin importar su posición
-social, son iguales al final de la vida. Lo verdaderamente importante
-no es el papel que se desempeña en el mundo, sino la forma en que se
-actúa durante la existencia.
+<article class="history-card reverse glass-card">
 
-</p>
+    <div class="history-image">
+
+        <img src="img/contexto/teatro-religioso.jpg"
+             alt="Representación de teatro religioso barroco"
+             loading="lazy">
+
+    </div>
+
+
+    <div class="history-content">
+
+        <span class="card-subtitle">
+
+            <i class="fa-solid fa-church"></i>
+
+            Teatro del Siglo de Oro
+
+        </span>
+
+
+        <h3>
+
+            La importancia del teatro religioso
+
+        </h3>
+
+
+        <p>
+
+            Durante el siglo XVII, el teatro se convirtió en una de las
+            manifestaciones culturales más importantes de España. No solo era
+            un espacio de entretenimiento, sino también un medio de enseñanza
+            donde se transmitían ideas morales, religiosas y sociales.
+
+        </p>
+
+
+        <p>
+
+            La Iglesia católica utilizó las representaciones teatrales como
+            una herramienta para acercar los contenidos religiosos al pueblo.
+            Debido a que gran parte de la población no sabía leer, el teatro
+            permitía explicar conceptos complejos mediante imágenes, símbolos
+            y personajes fácilmente reconocibles.
+
+        </p>
+
+
+        <p>
+
+            Los escenarios combinaban música, poesía, actuación y elementos
+            visuales para crear experiencias que impresionaban al público.
+            Estas características hicieron que el teatro barroco alcanzara un
+            enorme desarrollo y popularidad.
+
+        </p>
+
+
+        <p>
+
+            Dentro de este contexto apareció una forma teatral especialmente
+            relacionada con la religión: el <strong>auto sacramental</strong>,
+            género en el que destacó Pedro Calderón de la Barca.
+
+        </p>
+
+    </div>
+
+</article>
+
+
+<!--======================================================
+                AUTO SACRAMENTAL
+=======================================================-->
+
+<article class="history-card glass-card">
+
+
+    <div class="history-image">
+
+
+        <img src="img/contexto/auto-sacramental.jpg"
+             alt="Representación de un auto sacramental"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="history-content">
+
+
+        <span class="card-subtitle">
+
+            <i class="fa-solid fa-scroll"></i>
+
+            Género teatral
+
+        </span>
+
+
+
+        <h3>
+
+            El auto sacramental
+
+        </h3>
+
+
+
+        <p>
+
+            El auto sacramental fue un tipo de obra teatral religiosa,
+            generalmente representada durante la festividad del
+            <strong>Corpus Christi</strong>. Su objetivo era explicar y
+            defender los principios de la fe católica mediante personajes
+            alegóricos y situaciones simbólicas.
+
+        </p>
+
+
+
+        <p>
+
+            A diferencia de otros géneros teatrales, los personajes del auto
+            sacramental no siempre representaban personas reales, sino ideas
+            abstractas como la Fe, la Gracia, el Pecado, la Muerte o la
+            Humanidad.
+
+        </p>
+
+
+
+        <p>
+
+            En <em>El gran teatro del mundo</em>, Calderón utiliza esta técnica
+            para presentar la existencia humana como una gran representación
+            teatral. El Mundo entrega diferentes papeles a los seres humanos
+            y, al final de la obra, cada personaje debe responder por sus
+            acciones.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+<!--======================================================
+            CARACTERÍSTICAS DEL AUTO SACRAMENTAL
+=======================================================-->
+
+
+<section class="features-grid">
+
+
+    <article class="feature-card glass-card">
+
+
+        <i class="fa-solid fa-person-chalkboard"></i>
+
+
+        <h4>
+
+            Alegoría
+
+        </h4>
+
+
+        <p>
+
+            Los personajes representan ideas universales y conceptos
+            espirituales en lugar de solamente individuos concretos.
+
+        </p>
+
+
+    </article>
+
+
+
+    <article class="feature-card glass-card">
+
+
+        <i class="fa-solid fa-cross"></i>
+
+
+        <h4>
+
+            Religión
+
+        </h4>
+
+
+        <p>
+
+            Su finalidad principal era transmitir enseñanzas relacionadas
+            con la fe cristiana y la salvación.
+
+        </p>
+
+
+    </article>
+
+
+
+    <article class="feature-card glass-card">
+
+
+        <i class="fa-solid fa-theater-masks"></i>
+
+
+        <h4>
+
+            Representación
+
+        </h4>
+
+
+        <p>
+
+            Combinaba actuación, música, poesía y elementos visuales para
+            impactar al espectador.
+
+        </p>
+
+
+    </article>
+
+
+
+    <article class="feature-card glass-card">
+
+
+        <i class="fa-solid fa-brain"></i>
+
+
+        <h4>
+
+            Reflexión
+
+        </h4>
+
+
+        <p>
+
+            Invitaba al público a pensar sobre la vida, la muerte y el
+            destino espiritual del ser humano.
+
+        </p>
+
+
+    </article>
+
 
 </section>
 
-<section class="galeria">
 
-<h2>Galería</h2>
 
-<div class="imagenes">
+<!--======================================================
+                SABÍAS QUE
+=======================================================-->
 
-<img src="img/personajes.jpg" alt="">
-<img src="img/teatro.jpg" alt="">
-<img src="img/escenario.jpg" alt="">
+
+<section class="did-you-know glass-card">
+
+
+    <div class="did-icon">
+
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+
+    </div>
+
+
+
+    <div>
+
+
+        <h3>
+
+            ¿Sabías que...?
+
+        </h3>
+
+
+
+        <p>
+
+            Los autos sacramentales eran representados principalmente durante
+            la celebración del Corpus Christi y muchas veces contaban con
+            grandes escenarios móviles llamados "carros sacramentales".
+
+            Estos escenarios recorrían las ciudades y permitían que miles de
+            personas pudieran observar las obras.
+
+        </p>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+<!--======================================================
+                CITA HISTÓRICA
+=======================================================-->
+
+
+<blockquote class="historic-quote">
+
+
+    <i class="fa-solid fa-quote-left"></i>
+
+
+
+    <p>
+
+        El teatro barroco convirtió las ideas religiosas y filosóficas en
+        imágenes vivas, permitiendo que el público reflexionara sobre el
+        significado de la existencia humana.
+
+    </p>
+
+
+
+</blockquote>
+
+
+<!--======================================================
+        CONTINÚA EN PARTE 1.2C-2:
+        SOCIEDAD ESPAÑOLA DEL SIGLO XVII
+=======================================================-->
+<!--======================================================
+            SOCIEDAD ESPAÑOLA DEL SIGLO XVII
+=======================================================-->
+
+<article class="history-card reverse glass-card">
+
+
+    <div class="history-image">
+
+
+        <img src="img/contexto/sociedad-siglo-xvii.jpg"
+             alt="Sociedad española durante el siglo XVII"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="history-content">
+
+
+        <span class="card-subtitle">
+
+            <i class="fa-solid fa-users"></i>
+
+            España en el siglo XVII
+
+        </span>
+
+
+
+        <h3>
+
+            La sociedad española del Siglo de Oro
+
+        </h3>
+
+
+
+        <p>
+
+            La España del siglo XVII estaba organizada mediante una estructura
+            social basada principalmente en los privilegios y diferencias de
+            nacimiento. La sociedad se dividía en distintos grupos donde la
+            nobleza y el clero ocupaban posiciones privilegiadas, mientras que
+            gran parte de la población pertenecía al pueblo trabajador.
+
+        </p>
+
+
+
+        <p>
+
+            Esta desigualdad social aparece reflejada simbólicamente en
+            <em>El gran teatro del mundo</em>. Calderón presenta personajes
+            como el Rey, el Rico, el Labrador y el Pobre para mostrar que,
+            aunque las personas reciban papeles diferentes durante la vida,
+            todas poseen el mismo valor ante Dios.
+
+        </p>
+
+
+
+        <p>
+
+            Durante esta época existían fuertes contrastes: mientras la corte
+            española mostraba riqueza y poder, muchos habitantes enfrentaban
+            dificultades económicas debido a crisis agrícolas, guerras y
+            problemas sociales.
+
+        </p>
+
+
+
+        <p>
+
+            Estas contradicciones fueron una característica importante del
+            pensamiento barroco. Los escritores reflexionaron sobre temas como
+            la apariencia frente a la realidad, la fugacidad de la vida y la
+            importancia de las acciones humanas.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+<!--======================================================
+                CLASES SOCIALES
+=======================================================-->
+
+
+<section class="social-classes">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            Organización social
+
+        </span>
+
+
+
+        <h2>
+
+            Los grupos sociales del siglo XVII
+
+        </h2>
+
+
+    </div>
+
+
+
+
+    <div class="cards-grid">
+
+
+        <article class="info-card glass-card">
+
+
+            <i class="fa-solid fa-crown"></i>
+
+
+            <h3>
+
+                Nobleza
+
+            </h3>
+
+
+            <p>
+
+                Representaba el poder político y militar. Sus miembros poseían
+                privilegios heredados y una gran influencia dentro de la
+                sociedad.
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="info-card glass-card">
+
+
+            <i class="fa-solid fa-church"></i>
+
+
+            <h3>
+
+                Clero
+
+            </h3>
+
+
+            <p>
+
+                Tenía una gran importancia religiosa y educativa. La Iglesia
+                influía profundamente en la cultura y las costumbres de la
+                época.
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="info-card glass-card">
+
+
+            <i class="fa-solid fa-hammer"></i>
+
+
+            <h3>
+
+                Pueblo trabajador
+
+            </h3>
+
+
+            <p>
+
+                Campesinos, artesanos y trabajadores constituían la mayoría de
+                la población y sostenían gran parte de la economía.
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="info-card glass-card">
+
+
+            <i class="fa-solid fa-person"></i>
+
+
+            <h3>
+
+                Marginados
+
+            </h3>
+
+
+            <p>
+
+                Muchas personas vivían en condiciones difíciles y tenían pocas
+                oportunidades de mejorar su situación social.
+
+            </p>
+
+
+        </article>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+                TEATRO Y SOCIEDAD
+=======================================================-->
+
+<section class="history-gallery glass-card">
+
+
+    <div class="section-title">
+
+
+        <h2>
+
+            El teatro como encuentro social
+
+        </h2>
+
+
+        <p>
+
+            Los corrales de comedias fueron espacios donde personas de
+            diferentes grupos sociales podían reunirse para observar
+            representaciones teatrales.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="mini-gallery">
+
+
+        <figure>
+
+
+            <img src="img/contexto/corral-comedias-publico.jpg"
+                 alt="Público en un teatro antiguo"
+                 loading="lazy">
+
+
+            <figcaption>
+
+                El público de los corrales de comedias
+
+            </figcaption>
+
+
+        </figure>
+
+
+
+
+        <figure>
+
+
+            <img src="img/contexto/vida-cotidiana-barroco.jpg"
+                 alt="Vida cotidiana durante el Barroco"
+                 loading="lazy">
+
+
+            <figcaption>
+
+                Vida cotidiana en la España barroca
+
+            </figcaption>
+
+
+        </figure>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+                CIERRE DEL CONTEXTO
+=======================================================-->
+
+
+<section class="context-conclusion glass-card">
+
+
+    <div class="conclusion-icon">
+
+
+        <i class="fa-solid fa-scroll"></i>
+
+
+    </div>
+
+
+
+
+    <div>
+
+
+        <h3>
+
+            Importancia del contexto histórico
+
+        </h3>
+
+
+
+        <p>
+
+            El contexto del Siglo de Oro, la Contrarreforma, el Barroco y la
+            sociedad española del siglo XVII fue fundamental para comprender
+            <em>El gran teatro del mundo</em>. Calderón de la Barca creó una
+            obra donde las preocupaciones religiosas, filosóficas y sociales
+            de su tiempo aparecen representadas mediante símbolos universales.
+
+        </p>
+
+
+
+        <p>
+
+            La obra continúa siendo estudiada porque plantea preguntas que
+            siguen vigentes: ¿qué valor tienen nuestras acciones?, ¿cómo
+            debemos utilizar el papel que nos corresponde en la vida?, ¿qué
+            importancia tienen las diferencias sociales frente a la igualdad
+            humana?
+
+        </p>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+            FIN DEL CONTEXTO HISTÓRICO
+
+            SIGUIENTE:
+            PARTE 1.3
+            BIOGRAFÍA DE PEDRO CALDERÓN DE LA BARCA
+=======================================================-->
+<!--======================================================
+                BIOGRAFÍA DEL AUTOR
+=======================================================-->
+
+<section id="autor" class="author-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-feather"></i>
+
+            El creador de la obra
+
+        </span>
+
+
+
+        <h2>
+
+            Pedro Calderón de la Barca
+
+        </h2>
+
+
+
+        <p>
+
+            Uno de los mayores representantes del teatro barroco español y
+            una de las figuras fundamentales del Siglo de Oro.
+
+        </p>
+
+
+    </div>
+
+
+
+
+    <!--=========================
+            PRESENTACIÓN
+    ==========================-->
+
+
+    <article class="author-intro glass-card">
+
+
+        <div class="author-image">
+
+
+            <img src="img/autor/pedro-calderon-retrato.jpg"
+                 alt="Retrato de Pedro Calderón de la Barca"
+                 loading="lazy">
+
+
+        </div>
+
+
+
+
+        <div class="author-text">
+
+
+            <h3>
+
+                Un maestro del teatro barroco
+
+            </h3>
+
+
+
+            <p>
+
+                <strong>Pedro Calderón de la Barca</strong> nació en Madrid el
+                17 de enero de 1600. Fue dramaturgo, poeta y escritor español,
+                considerado uno de los autores más importantes del Siglo de
+                Oro junto con Miguel de Cervantes y Lope de Vega.
+
+            </p>
+
+
+
+            <p>
+
+                Su obra destacó por la profundidad filosófica, el uso del
+                simbolismo y la reflexión sobre temas universales como la
+                libertad, el destino, el honor, la vida y la relación entre
+                el ser humano y Dios.
+
+            </p>
+
+
+
+            <p>
+
+                A través de sus textos consiguió combinar belleza literaria,
+                pensamiento religioso y una extraordinaria capacidad para
+                representar los conflictos humanos.
+
+            </p>
+
+
+        </div>
+
+
+    </article>
+
+
+
+
+
+    <!--=========================
+            DATOS DEL AUTOR
+    ==========================-->
+
+
+    <div class="author-data">
+
+
+        <article class="data-card glass-card">
+
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+
+            <h4>
+
+                Nacimiento
+
+            </h4>
+
+
+            <p>
+
+                17 de enero de 1600
+                <br>
+                Madrid, España
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="data-card glass-card">
+
+
+            <i class="fa-solid fa-book"></i>
+
+
+            <h4>
+
+                Profesión
+
+            </h4>
+
+
+            <p>
+
+                Dramaturgo, poeta y escritor del Barroco español.
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="data-card glass-card">
+
+
+            <i class="fa-solid fa-pen"></i>
+
+
+            <h4>
+
+                Género principal
+
+            </h4>
+
+
+            <p>
+
+                Teatro barroco y autos sacramentales.
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="data-card glass-card">
+
+
+            <i class="fa-solid fa-star"></i>
+
+
+            <h4>
+
+                Importancia
+
+            </h4>
+
+
+            <p>
+
+                Uno de los grandes autores del Siglo de Oro.
+
+            </p>
+
+
+        </article>
+
+
+
+    </div>
+
+
+
+
+
+    <!--======================================================
+                    VIDA Y FORMACIÓN
+    =======================================================-->
+
+
+    <article class="biography-block glass-card">
+
+
+        <div class="biography-image">
+
+
+            <img src="img/autor/madrid-siglo-xvii.jpg"
+                 alt="Madrid durante el siglo XVII"
+                 loading="lazy">
+
+
+        </div>
+
+
+
+
+        <div class="biography-content">
+
+
+            <h3>
+
+                Infancia y estudios
+
+            </h3>
+
+
+
+            <p>
+
+                Calderón nació en una familia perteneciente a la pequeña
+                nobleza. Desde joven recibió una educación humanista basada
+                en la literatura, la filosofía y la religión.
+
+            </p>
+
+
+
+            <p>
+
+                Estudió en el Colegio Imperial de los jesuitas de Madrid y
+                posteriormente ingresó en la Universidad de Alcalá y la
+                Universidad de Salamanca, donde tuvo contacto con la tradición
+                clásica y el pensamiento de su época.
+
+            </p>
+
+
+
+            <p>
+
+                Esta formación influyó profundamente en su estilo literario,
+                caracterizado por la reflexión intelectual y el cuidado de la
+                expresión artística.
+
+            </p>
+
+
+        </div>
+
+
+    </article>
+
+
+
+
+
+    <!--======================================================
+                    CARRERA LITERARIA
+    =======================================================-->
+
+
+    <article class="biography-block reverse glass-card">
+
+
+
+        <div class="biography-image">
+
+
+            <img src="img/autor/calderon-teatro.jpg"
+                 alt="Representación teatral barroca"
+                 loading="lazy">
+
+
+        </div>
+
+
+
+
+        <div class="biography-content">
+
+
+            <h3>
+
+                Carrera como dramaturgo
+
+            </h3>
+
+
+
+            <p>
+
+                Durante su juventud comenzó a escribir obras teatrales y
+                rápidamente obtuvo reconocimiento dentro de la corte española.
+                Su talento lo convirtió en uno de los principales sucesores de
+                la tradición teatral iniciada por Lope de Vega.
+
+            </p>
+
+
+
+            <p>
+
+                Escribió comedias, dramas filosóficos y numerosos autos
+                sacramentales. Su teatro combinaba acción dramática con
+                profundas preguntas sobre la existencia humana.
+
+            </p>
+
+
+
+            <p>
+
+                Entre sus obras más conocidas se encuentran:
+
+            </p>
+
+
+
+            <ul class="works-list">
+
+                <li>
+                    <strong>La vida es sueño</strong>
+                </li>
+
+                <li>
+                    <strong>El alcalde de Zalamea</strong>
+                </li>
+
+                <li>
+                    <strong>El gran teatro del mundo</strong>
+                </li>
+
+                <li>
+                    <strong>La dama duende</strong>
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+    </article>
+
+
+
+
+
+<!--======================================================
+        CONTINÚA EN PARTE 1.3B:
+        ÚLTIMOS AÑOS, LEGADO Y LÍNEA BIOGRÁFICA
+=======================================================-->
+<!--======================================================
+            ÚLTIMOS AÑOS DE CALDERÓN
+=======================================================-->
+
+<article class="biography-block glass-card">
+
+
+    <div class="biography-image">
+
+
+        <img src="img/autor/manuscrito-calderon.jpg"
+             alt="Manuscrito antiguo relacionado con Calderón de la Barca"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="biography-content">
+
+
+        <span class="card-subtitle">
+
+            <i class="fa-solid fa-scroll"></i>
+
+            Etapa final
+
+        </span>
+
+
+
+        <h3>
+
+            Últimos años y dedicación religiosa
+
+        </h3>
+
+
+
+        <p>
+
+            Durante la última etapa de su vida, Calderón de la Barca redujo
+            progresivamente su actividad teatral profana y dedicó gran parte
+            de su tiempo a la escritura de autos sacramentales y obras de
+            carácter religioso.
+
+        </p>
+
+
+
+        <p>
+
+            En 1651 fue ordenado sacerdote, decisión que influyó en el rumbo
+            de su producción literaria. Desde entonces sus obras reflejaron
+            con mayor profundidad sus preocupaciones espirituales y
+            filosóficas.
+
+        </p>
+
+
+
+        <p>
+
+            Continuó siendo reconocido como uno de los escritores más
+            importantes de la corte española y mantuvo una gran influencia
+            dentro del mundo cultural de su época.
+
+        </p>
+
+
+
+        <p>
+
+            Pedro Calderón de la Barca falleció en Madrid el 25 de mayo de
+            1681, dejando una producción literaria que continúa siendo
+            estudiada siglos después.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    LEGADO
+=======================================================-->
+
+<article class="author-intro glass-card">
+
+
+    <div class="author-image">
+
+
+        <img src="img/autor/legado-calderon.jpg"
+             alt="Representación del legado literario de Calderón"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="author-text">
+
+
+        <h3>
+
+            El legado de Pedro Calderón de la Barca
+
+        </h3>
+
+
+
+        <p>
+
+            Calderón es considerado uno de los grandes renovadores del teatro
+            europeo gracias a la profundidad psicológica de sus personajes,
+            la complejidad de sus argumentos y la riqueza simbólica de sus
+            obras.
+
+        </p>
+
+
+
+        <p>
+
+            Su influencia ha llegado hasta la actualidad. Sus textos siguen
+            representándose en teatros de todo el mundo y continúan siendo
+            analizados por especialistas en literatura, filosofía e historia
+            del arte.
+
+        </p>
+
+
+
+        <p>
+
+            Obras como <em>La vida es sueño</em> y
+            <em>El gran teatro del mundo</em> mantienen vigencia porque
+            plantean preguntas universales sobre la libertad, la identidad,
+            la justicia y el sentido de la existencia humana.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                LÍNEA BIOGRÁFICA
+=======================================================-->
+
+<section class="timeline-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-timeline"></i>
+
+            Vida del autor
+
+        </span>
+
+
+
+        <h2>
+
+            Línea del tiempo de Pedro Calderón de la Barca
+
+        </h2>
+
+
+    </div>
+
+
+
+
+    <div class="timeline">
+
+
+
+        <article class="timeline-item">
+
+
+            <div class="timeline-date">
+
+                1600
+
+            </div>
+
+
+            <div class="timeline-content glass-card">
+
+
+                <h3>
+
+                    Nacimiento
+
+                </h3>
+
+
+                <p>
+
+                    Nace el 17 de enero en Madrid, dentro de una familia
+                    relacionada con la administración de la corte.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+
+
+        <article class="timeline-item">
+
+
+            <div class="timeline-date">
+
+                1614-1620
+
+            </div>
+
+
+            <div class="timeline-content glass-card">
+
+
+                <h3>
+
+                    Formación académica
+
+                </h3>
+
+
+                <p>
+
+                    Estudia humanidades, filosofía y teología, adquiriendo
+                    una sólida formación intelectual.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+
+
+        <article class="timeline-item">
+
+
+            <div class="timeline-date">
+
+                1620
+
+            </div>
+
+
+            <div class="timeline-content glass-card">
+
+
+                <h3>
+
+                    Inicio literario
+
+                </h3>
+
+
+                <p>
+
+                    Comienza a destacar como dramaturgo dentro del ambiente
+                    teatral del Siglo de Oro.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+
+
+        <article class="timeline-item">
+
+
+            <div class="timeline-date">
+
+                1635
+
+            </div>
+
+
+            <div class="timeline-content glass-card">
+
+
+                <h3>
+
+                    Reconocimiento
+
+                </h3>
+
+
+                <p>
+
+                    Estrena obras importantes y alcanza gran prestigio en la
+                    corte española.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+
+
+        <article class="timeline-item">
+
+
+            <div class="timeline-date">
+
+                1651
+
+            </div>
+
+
+            <div class="timeline-content glass-card">
+
+
+                <h3>
+
+                    Ordenación sacerdotal
+
+                </h3>
+
+
+                <p>
+
+                    Se convierte en sacerdote y aumenta su dedicación a los
+                    autos sacramentales.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+
+
+        <article class="timeline-item">
+
+
+            <div class="timeline-date">
+
+                1681
+
+            </div>
+
+
+            <div class="timeline-content glass-card">
+
+
+                <h3>
+
+                    Fallecimiento
+
+                </h3>
+
+
+                <p>
+
+                    Muere en Madrid dejando un enorme legado dentro de la
+                    literatura universal.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+                CURIOSIDADES DEL AUTOR
+=======================================================-->
+
+<section class="curiosities-preview glass-card">
+
+
+    <h3>
+
+        <i class="fa-solid fa-star"></i>
+
+        Datos curiosos sobre Calderón
+
+    </h3>
+
+
+
+    <ul>
+
+
+        <li>
+
+            Fue uno de los principales representantes del teatro barroco
+            español.
+
+        </li>
+
+
+        <li>
+
+            Escribió más de cien obras teatrales y numerosos autos
+            sacramentales.
+
+        </li>
+
+
+        <li>
+
+            Sus obras combinan literatura, filosofía y reflexión religiosa.
+
+        </li>
+
+
+        <li>
+
+            Su teatro sigue representándose en escenarios actuales.
+
+        </li>
+
+
+    </ul>
+
+
+</section>
+
+
+
+<!--======================================================
+        FIN DE LA PARTE 1.3
+
+        SIGUIENTE:
+        PARTE 1.4
+        ¿QUÉ ES "EL GRAN TEATRO DEL MUNDO"?
+=======================================================-->
+
+</section>
+<!--======================================================
+                LA OBRA
+=======================================================-->
+
+<section id="obra" class="work-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            Análisis literario
+
+        </span>
+
+
+
+        <h2>
+
+            ¿Qué es <em>El gran teatro del mundo</em>?
+
+        </h2>
+
+
+
+        <p>
+
+            Una de las obras más representativas del teatro barroco español
+            escrita por Pedro Calderón de la Barca.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                PRESENTACIÓN DE LA OBRA
+=======================================================-->
+
+
+<article class="author-intro glass-card">
+
+
+    <div class="author-image">
+
+
+        <img src="img/obra/gran-teatro-del-mundo.jpg"
+             alt="Representación de El gran teatro del mundo"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="author-text">
+
+
+        <h3>
+
+            Una alegoría sobre la vida humana
+
+        </h3>
+
+
+
+        <p>
+
+            <em>El gran teatro del mundo</em> es un auto sacramental escrito
+            por Pedro Calderón de la Barca aproximadamente hacia 1655.
+            La obra representa la existencia humana como si fuera una gran
+            función teatral en la que cada persona recibe un papel que debe
+            interpretar durante su vida.
+
+        </p>
+
+
+
+        <p>
+
+            En esta representación simbólica, el Mundo actúa como escenario,
+            Dios aparece como el Autor supremo y los seres humanos reciben
+            distintos personajes que representan las diferentes posiciones
+            sociales existentes: reyes, ricos, pobres, campesinos y figuras
+            relacionadas con virtudes y valores.
+
+        </p>
+
+
+
+        <p>
+
+            La obra plantea una profunda reflexión sobre la responsabilidad
+            individual. Calderón muestra que la importancia de una persona no
+            depende del papel que recibe, sino de la manera en que cumple sus
+            obligaciones y actúa frente a los demás.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                INFORMACIÓN GENERAL
+=======================================================-->
+
+
+<section class="data-table-section">
+
+
+    <div class="section-title">
+
+
+        <h2>
+
+            Datos principales de la obra
+
+        </h2>
+
+
+    </div>
+
+
+
+
+    <div class="work-data-grid">
+
+
+
+        <article class="data-card glass-card">
+
+
+            <i class="fa-solid fa-user-pen"></i>
+
+
+            <h4>
+
+                Autor
+
+            </h4>
+
+
+            <p>
+
+                Pedro Calderón de la Barca
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="data-card glass-card">
+
+
+            <i class="fa-solid fa-calendar"></i>
+
+
+            <h4>
+
+                Fecha
+
+            </h4>
+
+
+            <p>
+
+                Siglo XVII
+                <br>
+                Aproximadamente 1655
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="data-card glass-card">
+
+
+            <i class="fa-solid fa-masks-theater"></i>
+
+
+            <h4>
+
+                Género
+
+            </h4>
+
+
+            <p>
+
+                Auto sacramental
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="data-card glass-card">
+
+
+            <i class="fa-solid fa-palette"></i>
+
+
+            <h4>
+
+                Movimiento
+
+            </h4>
+
+
+            <p>
+
+                Barroco español
+
+            </p>
+
+
+        </article>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+                ESTRUCTURA DE LA OBRA
+=======================================================-->
+
+<article class="biography-block glass-card">
+
+
+    <div class="biography-image">
+
+
+        <img src="img/obra/manuscrito-obra.jpg"
+             alt="Manuscrito antiguo de una obra teatral"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="biography-content">
+
+
+        <h3>
+
+            Estructura y características
+
+        </h3>
+
+
+
+        <p>
+
+            La obra sigue la estructura tradicional del auto sacramental:
+            presenta una situación alegórica donde personajes simbólicos
+            representan conceptos universales y participan en un conflicto
+            moral.
+
+        </p>
+
+
+
+        <p>
+
+            El argumento comienza cuando el Autor divino decide crear un
+            gran escenario llamado Mundo. En él coloca a diferentes
+            personajes y les entrega un papel que deberán interpretar.
+
+        </p>
+
+
+
+        <p>
+
+            Cuando termina la representación, cada personaje debe presentar
+            sus acciones y demostrar si utilizó correctamente los dones y
+            responsabilidades que recibió.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                CARACTERÍSTICAS LITERARIAS
+=======================================================-->
+
+
+<section class="features-grid">
+
+
+    <article class="feature-card glass-card">
+
+
+        <i class="fa-solid fa-theater-masks"></i>
+
+
+        <h4>
+
+            Alegoría
+
+        </h4>
+
+
+        <p>
+
+            Los personajes representan ideas y conceptos universales más allá
+            de individuos concretos.
+
+        </p>
+
+
+    </article>
+
+
+
+
+
+    <article class="feature-card glass-card">
+
+
+        <i class="fa-solid fa-person-rays"></i>
+
+
+        <h4>
+
+            Simbolismo
+
+        </h4>
+
+
+        <p>
+
+            Cada elemento de la obra posee un significado relacionado con la
+            vida espiritual y moral.
+
+        </p>
+
+
+    </article>
+
+
+
+
+
+    <article class="feature-card glass-card">
+
+
+        <i class="fa-solid fa-scale-balanced"></i>
+
+
+        <h4>
+
+            Enseñanza moral
+
+        </h4>
+
+
+        <p>
+
+            La obra invita a reflexionar sobre las acciones humanas y sus
+            consecuencias.
+
+        </p>
+
+
+    </article>
+
+
+
+
+
+    <article class="feature-card glass-card">
+
+
+        <i class="fa-solid fa-earth-americas"></i>
+
+
+        <h4>
+
+            Universalidad
+
+        </h4>
+
+
+        <p>
+
+            Sus temas continúan siendo actuales porque hablan sobre la
+            condición humana.
+
+        </p>
+
+
+    </article>
+
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+                REFLEXIÓN PRINCIPAL
+=======================================================-->
+
+<section class="historic-quote">
+
+
+    <i class="fa-solid fa-quote-left"></i>
+
+
+    <p>
+
+        La vida aparece como un gran escenario donde cada persona recibe un
+        papel diferente, pero todas son juzgadas por la forma en que cumplen
+        su responsabilidad.
+
+    </p>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        CONTINÚA EN PARTE 1.4B:
+
+        RESUMEN COMPLETO DE LA OBRA
+=======================================================-->
+<!--======================================================
+            RESUMEN COMPLETO DE LA OBRA
+=======================================================-->
+
+<section class="summary-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-feather-pointed"></i>
+
+            Argumento
+
+        </span>
+
+
+
+        <h2>
+
+            Resumen de <em>El gran teatro del mundo</em>
+
+        </h2>
+
+
+
+        <p>
+
+            Una obra alegórica donde la existencia humana es representada como
+            una función teatral creada por Dios.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <!--=========================
+            IMAGEN PRINCIPAL
+    ==========================-->
+
+    <article class="summary-intro glass-card">
+
+
+        <div class="summary-image">
+
+
+            <img src="img/obra/escena-gran-teatro.jpg"
+                 alt="Escena teatral inspirada en El gran teatro del mundo"
+                 loading="lazy">
+
+
+        </div>
+
+
+
+
+        <div class="summary-text">
+
+
+            <h3>
+
+                La vida como una representación
+
+            </h3>
+
+
+
+            <p>
+
+                La obra comienza cuando el <strong>Autor</strong>, figura que
+                representa a Dios, decide crear una gran representación
+                teatral. Para ello construye un escenario llamado
+                <strong>Mundo</strong> y convoca a distintos personajes para
+                que participen en la función.
+
+            </p>
+
+
+
+            <p>
+
+                Cada personaje recibe un papel diferente. Algunos representan
+                posiciones privilegiadas como el Rey y el Rico, mientras que
+                otros representan situaciones más humildes como el Labrador y
+                el Pobre. También aparecen personajes simbólicos relacionados
+                con valores y conceptos espirituales.
+
+            </p>
+
+
+        </div>
+
+
+    </article>
+
+
+
+
+
+    <!--=========================
+            DESARROLLO
+    ==========================-->
+
+
+    <article class="summary-block glass-card">
+
+
+        <h3>
+
+            El reparto de papeles
+
+        </h3>
+
+
+
+        <p>
+
+            El Autor entrega a cada personaje una misión y las herramientas
+            necesarias para cumplirla. Sin embargo, también les recuerda que
+            el papel recibido es temporal y que al finalizar la obra deberán
+            responder por sus acciones.
+
+        </p>
+
+
+
+        <p>
+
+            Los personajes comienzan a interpretar sus papeles dentro del
+            escenario de la vida. Algunos utilizan correctamente sus
+            capacidades, mientras que otros se dejan llevar por el orgullo,
+            la ambición o el egoísmo.
+
+        </p>
+
+
+
+    </article>
+
+
+
+
+
+    <article class="summary-block glass-card">
+
+
+        <h3>
+
+            Las diferencias entre los personajes
+
+        </h3>
+
+
+
+        <p>
+
+            Durante la representación aparecen los contrastes entre riqueza y
+            pobreza, poder y humildad. El Rey posee autoridad, el Rico tiene
+            abundancia material, mientras que el Pobre debe enfrentar mayores
+            dificultades.
+
+        </p>
+
+
+
+        <p>
+
+            A pesar de estas diferencias, Calderón transmite una idea central:
+            ante Dios todos los seres humanos poseen la misma importancia. Lo
+            que realmente determina el valor de cada persona son sus actos y
+            la manera en que cumple su responsabilidad.
+
+        </p>
+
+
+
+    </article>
+
+
+
+
+
+    <article class="summary-block glass-card">
+
+
+        <h3>
+
+            El final de la representación
+
+        </h3>
+
+
+
+        <p>
+
+            Cuando llega el final de la obra, el Autor llama nuevamente a los
+            personajes para realizar una evaluación de sus acciones. Cada uno
+            debe devolver el papel que recibió y demostrar cómo utilizó los
+            dones que le fueron concedidos.
+
+        </p>
+
+
+
+        <p>
+
+            Algunos personajes son recompensados porque actuaron con
+            responsabilidad y humildad, mientras que otros reciben una
+            consecuencia por haber utilizado mal sus privilegios.
+
+        </p>
+
+
+
+        <p>
+
+            Finalmente, la obra concluye con la enseñanza de que la vida es
+            pasajera y que todos los seres humanos deben actuar con justicia,
+            solidaridad y fe.
+
+        </p>
+
+
+    </article>
+
+
+
+
+
+    <!--=========================
+        IDEAS PRINCIPALES
+    ==========================-->
+
+    <section class="ideas-grid">
+
+
+        <article class="idea-card glass-card">
+
+
+            <i class="fa-solid fa-hourglass-half"></i>
+
+
+            <h4>
+
+                La vida es temporal
+
+            </h4>
+
+
+            <p>
+
+                El mundo es solamente un escenario donde las personas cumplen
+                una función antes de regresar al Autor.
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="idea-card glass-card">
+
+
+            <i class="fa-solid fa-equals"></i>
+
+
+            <h4>
+
+                Igualdad humana
+
+            </h4>
+
+
+            <p>
+
+                Las diferencias sociales desaparecen cuando todos son
+                juzgados por sus acciones.
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="idea-card glass-card">
+
+
+            <i class="fa-solid fa-hand-holding-heart"></i>
+
+
+            <h4>
+
+                Responsabilidad
+
+            </h4>
+
+
+            <p>
+
+                Cada persona debe utilizar correctamente los talentos y
+                oportunidades que recibe.
+
+            </p>
+
+
+        </article>
+
+
+
+
+
+        <article class="idea-card glass-card">
+
+
+            <i class="fa-solid fa-star"></i>
+
+
+            <h4>
+
+                Enseñanza moral
+
+            </h4>
+
+
+            <p>
+
+                La verdadera grandeza se encuentra en la virtud y no en las
+                riquezas materiales.
+
+            </p>
+
+
+        </article>
+
+
+    </section>
+
+
+
+
+
+    <!--=========================
+            CONCLUSIÓN
+    ==========================-->
+
+
+    <blockquote class="historic-quote">
+
+
+        <i class="fa-solid fa-quote-left"></i>
+
+
+        <p>
+
+            Cada ser humano representa un papel en el gran escenario de la
+            existencia, y su verdadero valor depende de cómo desempeña ese
+            papel.
+
+        </p>
+
+
+    </blockquote>
+
+
+
+</section>
+
+
+
+<!--======================================================
+        FIN PARTE 1.4B
+
+        SIGUIENTE:
+        PARTE 1.5
+        PERSONAJES DE LA OBRA
+=======================================================-->
+
+
+</section>
+<!--======================================================
+                PERSONAJES DE LA OBRA
+=======================================================-->
+
+<section id="personajes" class="characters-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-users"></i>
+
+            Personajes alegóricos
+
+        </span>
+
+
+
+        <h2>
+
+            Los personajes de
+            <em>El gran teatro del mundo</em>
+
+        </h2>
+
+
+
+        <p>
+
+            Cada personaje representa una condición humana, un valor o una
+            idea universal. Calderón utiliza la alegoría para mostrar que
+            todos los seres humanos cumplen un papel dentro del gran escenario
+            de la vida.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                    EL AUTOR
+=======================================================-->
+
+<article class="character-card glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/autor-personaje.jpg"
+             alt="El Autor en El gran teatro del mundo"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-crown"></i>
+
+            Figura divina
+
+        </span>
+
+
+
+        <h3>
+
+            El Autor
+
+        </h3>
+
+
+
+        <p>
+
+            El Autor representa a Dios como creador y organizador de la gran
+            obra de la existencia humana. Es quien construye el escenario del
+            Mundo y asigna los diferentes papeles a los personajes.
+
+        </p>
+
+
+
+        <p>
+
+            No participa como un personaje humano común, sino como una figura
+            superior que observa, guía y finalmente juzga las acciones de
+            quienes participan en la representación.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                La creación, la justicia divina y el orden universal.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    EL MUNDO
+=======================================================-->
+
+<article class="character-card reverse glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/mundo-personaje.jpg"
+             alt="El Mundo como personaje alegórico"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-earth-americas"></i>
+
+            Escenario
+
+        </span>
+
+
+
+        <h3>
+
+            El Mundo
+
+        </h3>
+
+
+
+        <p>
+
+            El Mundo es el personaje encargado de preparar el escenario donde
+            se desarrolla la representación. Entrega los elementos necesarios
+            para que cada individuo pueda cumplir su papel.
+
+        </p>
+
+
+
+        <p>
+
+            Representa la realidad material donde las personas viven
+            temporalmente. Aunque parece importante, su existencia es
+            pasajera y está subordinada al Autor.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                La vida terrenal y el escenario de la existencia.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    EL REY
+=======================================================-->
+
+<article class="character-card glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/rey-personaje.jpg"
+             alt="El Rey como personaje de la obra"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-landmark"></i>
+
+            Poder social
+
+        </span>
+
+
+
+        <h3>
+
+            El Rey
+
+        </h3>
+
+
+
+        <p>
+
+            El Rey representa a quienes poseen autoridad, poder y privilegios
+            dentro de la sociedad. Su papel le concede una posición elevada
+            frente a otros personajes.
+
+        </p>
+
+
+
+        <p>
+
+            Sin embargo, Calderón muestra que el poder no garantiza una
+            superioridad moral. El Rey también debe responder por sus
+            decisiones y por la manera en que utiliza su autoridad.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                El poder, la responsabilidad y el gobierno justo.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+            TABLA SIMBÓLICA
+=======================================================-->
+
+<section class="symbol-table glass-card">
+
+
+    <h3>
+
+        <i class="fa-solid fa-key"></i>
+
+        Significado de los personajes
+
+    </h3>
+
+
+
+
+    <table>
+
+
+        <thead>
+
+
+            <tr>
+
+                <th>
+
+                    Personaje
+
+                </th>
+
+
+                <th>
+
+                    Representa
+
+                </th>
+
+
+                <th>
+
+                    Enseñanza
+
+                </th>
+
+
+            </tr>
+
+
+        </thead>
+
+
+
+
+        <tbody>
+
+
+            <tr>
+
+                <td>
+
+                    El Autor
+
+                </td>
+
+
+                <td>
+
+                    Dios creador
+
+                </td>
+
+
+                <td>
+
+                    La justicia y el orden universal
+
+                </td>
+
+
+            </tr>
+
+
+
+
+            <tr>
+
+                <td>
+
+                    El Mundo
+
+                </td>
+
+
+                <td>
+
+                    La vida terrenal
+
+                </td>
+
+
+                <td>
+
+                    La existencia es temporal
+
+                </td>
+
+
+            </tr>
+
+
+
+
+            <tr>
+
+                <td>
+
+                    El Rey
+
+                </td>
+
+
+                <td>
+
+                    El poder
+
+                </td>
+
+
+                <td>
+
+                    La autoridad exige responsabilidad
+
+                </td>
+
+
+            </tr>
+
+
+        </tbody>
+
+
+    </table>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        CONTINÚA PARTE 1.5B:
+        REINA, RICO, LABRADOR Y POBRE
+=======================================================-->
+<!--======================================================
+                    LA REINA
+=======================================================-->
+
+<article class="character-card reverse glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/reina-personaje.jpg"
+             alt="La Reina como personaje alegórico"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-gem"></i>
+
+            Apariencia y poder
+
+        </span>
+
+
+
+        <h3>
+
+            La Reina
+
+        </h3>
+
+
+
+        <p>
+
+            La Reina representa la posición privilegiada dentro de la sociedad
+            y está relacionada con la nobleza y el poder. Su papel refleja la
+            importancia que tenía la imagen pública y el prestigio durante el
+            siglo XVII.
+
+        </p>
+
+
+
+        <p>
+
+            A través de este personaje, Calderón recuerda que incluso quienes
+            poseen belleza, riqueza o autoridad deben actuar correctamente,
+            porque ninguna condición humana es permanente.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                La belleza, la nobleza y la responsabilidad del privilegio.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    EL RICO
+=======================================================-->
+
+<article class="character-card glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/rico-personaje.jpg"
+             alt="El Rico como personaje alegórico"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-coins"></i>
+
+            Riqueza material
+
+        </span>
+
+
+
+        <h3>
+
+            El Rico
+
+        </h3>
+
+
+
+        <p>
+
+            El Rico representa a las personas que poseen abundancia económica
+            y bienes materiales. Su posición le permite disfrutar de ventajas
+            que otros personajes no tienen.
+
+        </p>
+
+
+
+        <p>
+
+            Sin embargo, la obra muestra que la riqueza por sí sola no
+            garantiza la verdadera felicidad ni la salvación. El valor de una
+            persona depende de cómo utiliza sus recursos y cómo trata a los
+            demás.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                La riqueza, la ambición y la importancia de la generosidad.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    EL LABRADOR
+=======================================================-->
+
+<article class="character-card reverse glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/labrador-personaje.jpg"
+             alt="El Labrador en la obra"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-wheat-awn"></i>
+
+            Trabajo y esfuerzo
+
+        </span>
+
+
+
+        <h3>
+
+            El Labrador
+
+        </h3>
+
+
+
+        <p>
+
+            El Labrador representa al trabajador del campo y a las personas
+            que viven de su esfuerzo diario. Su personaje refleja la
+            importancia del trabajo humilde dentro de la sociedad.
+
+        </p>
+
+
+
+        <p>
+
+            Aunque no posee riqueza ni poder, demuestra que la dignidad no
+            depende de la posición social, sino de la honestidad y la forma
+            en que cada persona cumple su deber.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                El esfuerzo, la humildad y el valor del trabajo.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    EL POBRE
+=======================================================-->
+
+<article class="character-card glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/pobre-personaje.jpg"
+             alt="El Pobre como personaje alegórico"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-hands-holding-circle"></i>
+
+            Humildad
+
+        </span>
+
+
+
+        <h3>
+
+            El Pobre
+
+        </h3>
+
+
+
+        <p>
+
+            El Pobre representa a quienes tienen menos recursos materiales y
+            enfrentan mayores dificultades durante su existencia.
+
+        </p>
+
+
+
+        <p>
+
+            A pesar de su situación, su personaje demuestra que la pobreza
+            económica no significa inferioridad humana. Calderón defiende la
+            idea de que todas las personas poseen la misma dignidad ante Dios.
+
+        </p>
+
+
+
+        <p>
+
+            Su papel es fundamental porque muestra que la verdadera riqueza se
+            encuentra en la virtud, la fe y la forma de actuar.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                La humildad, la paciencia y la igualdad espiritual.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+        COMPARACIÓN SOCIAL
+=======================================================-->
+
+<section class="comparison-box glass-card">
+
+
+    <h3>
+
+        <i class="fa-solid fa-scale-balanced"></i>
+
+        Contraste entre personajes
+
+    </h3>
+
+
+
+    <p>
+
+        Calderón utiliza personajes con posiciones sociales opuestas para
+        demostrar que las diferencias humanas son temporales. El Rey y el Rico
+        poseen privilegios, mientras que el Labrador y el Pobre representan
+        una vida más humilde. Sin embargo, todos reciben el mismo trato al
+        momento del juicio final.
+
+    </p>
+
+
+
+    <div class="comparison-grid">
+
+
+        <div>
+
+
+            <h4>
+
+                Poder y riqueza
+
+            </h4>
+
+
+            <p>
+
+                Rey y Rico
+
+            </p>
+
+
+        </div>
+
+
+
+        <div>
+
+
+            <h4>
+
+                Trabajo y humildad
+
+            </h4>
+
+
+            <p>
+
+                Labrador y Pobre
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        CONTINÚA PARTE 1.5C:
+
+        HERMOSURA, DISCRECIÓN,
+        NIÑO Y LEY DE GRACIA
+=======================================================-->
+<!--======================================================
+                    LA HERMOSURA
+=======================================================-->
+
+<article class="character-card reverse glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/hermosura-personaje.jpg"
+             alt="La Hermosura como personaje alegórico"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-sun"></i>
+
+            Belleza humana
+
+        </span>
+
+
+
+        <h3>
+
+            La Hermosura
+
+        </h3>
+
+
+
+        <p>
+
+            La Hermosura representa la belleza física y los atributos
+            exteriores que pueden llamar la atención de las personas durante
+            la vida.
+
+        </p>
+
+
+
+        <p>
+
+            Calderón muestra que la belleza es un don temporal. Aunque puede
+            otorgar admiración y reconocimiento, no constituye el verdadero
+            valor de una persona.
+
+        </p>
+
+
+
+        <p>
+
+            Su presencia recuerda que las cualidades externas desaparecen con
+            el paso del tiempo y que las virtudes interiores poseen mayor
+            importancia.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                La belleza, la apariencia y la fugacidad de lo material.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    LA DISCRECIÓN
+=======================================================-->
+
+<article class="character-card glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/discrecion-personaje.jpg"
+             alt="La Discreción como personaje alegórico"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-brain"></i>
+
+            Virtud
+
+        </span>
+
+
+
+        <h3>
+
+            La Discreción
+
+        </h3>
+
+
+
+        <p>
+
+            La Discreción representa la inteligencia, la prudencia y la
+            capacidad de actuar correctamente. Es uno de los personajes que
+            expresa los valores positivos que Calderón considera necesarios
+            para vivir.
+
+        </p>
+
+
+
+        <p>
+
+            Frente a otros personajes que se dejan llevar por la apariencia,
+            la riqueza o el orgullo, la Discreción demuestra la importancia
+            del conocimiento y la reflexión.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                La sabiduría, la prudencia y el buen juicio.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    EL NIÑO
+=======================================================-->
+
+<article class="character-card reverse glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/nino-personaje.jpg"
+             alt="El Niño en El gran teatro del mundo"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-child"></i>
+
+            Inocencia
+
+        </span>
+
+
+
+        <h3>
+
+            El Niño
+
+        </h3>
+
+
+
+        <p>
+
+            El Niño es un personaje que representa la inocencia y la pureza.
+            Su presencia introduce una visión diferente frente a los
+            conflictos y ambiciones de los demás personajes.
+
+        </p>
+
+
+
+        <p>
+
+            También puede interpretarse como una referencia al alma humana y
+            a la necesidad de conservar valores como la sencillez y la
+            humildad.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                La inocencia, la pureza y la esperanza.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                LA LEY DE GRACIA
+=======================================================-->
+
+<article class="character-card glass-card">
+
+
+    <div class="character-image">
+
+
+        <img src="img/personajes/ley-gracia-personaje.jpg"
+             alt="La Ley de Gracia como símbolo religioso"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="character-content">
+
+
+        <span class="character-tag">
+
+            <i class="fa-solid fa-cross"></i>
+
+            Figura espiritual
+
+        </span>
+
+
+
+        <h3>
+
+            La Ley de Gracia
+
+        </h3>
+
+
+
+        <p>
+
+            La Ley de Gracia representa la presencia de la fe cristiana y la
+            posibilidad de alcanzar la salvación mediante la vida espiritual.
+
+        </p>
+
+
+
+        <p>
+
+            Dentro de la obra cumple una función fundamental porque conecta
+            la experiencia humana con la dimensión religiosa característica de
+            los autos sacramentales.
+
+        </p>
+
+
+
+        <p>
+
+            Su aparición refuerza la idea de que las acciones humanas tienen
+            una consecuencia moral y espiritual.
+
+        </p>
+
+
+
+        <div class="symbol-box">
+
+
+            <strong>
+
+                Simboliza:
+
+            </strong>
+
+
+            <span>
+
+                La fe, la gracia divina y la salvación.
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                RESUMEN DE PERSONAJES
+=======================================================-->
+
+<section class="characters-summary glass-card">
+
+
+    <h3>
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        Significado general de los personajes
+
+    </h3>
+
+
+
+    <p>
+
+        Los personajes de <em>El gran teatro del mundo</em> no representan
+        únicamente individuos concretos, sino diferentes aspectos de la
+        condición humana. Calderón utiliza sus características para mostrar
+        que cada persona recibe un papel distinto en la vida, pero todas
+        comparten el mismo destino final.
+
+    </p>
+
+
+
+    <p>
+
+        La enseñanza principal es que la verdadera importancia de una persona
+        no depende de su riqueza, poder, apariencia o posición social, sino
+        de sus acciones, valores y responsabilidad.
+
+    </p>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+            FIN DE PERSONAJES
+
+            SIGUIENTE:
+            PARTE 1.6
+            VALORES PRESENTES EN LA OBRA
+=======================================================-->
+
+
+
+</section>
+<!--======================================================
+                VALORES DE LA OBRA
+=======================================================-->
+
+<section id="valores" class="values-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-heart"></i>
+
+            Enseñanzas principales
+
+        </span>
+
+
+
+        <h2>
+
+            Valores presentes en
+            <em>El gran teatro del mundo</em>
+
+        </h2>
+
+
+
+        <p>
+
+            La obra de Calderón transmite una serie de valores morales y
+            espirituales que invitan al lector a reflexionar sobre la forma
+            correcta de actuar durante la vida.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                    HUMILDAD
+=======================================================-->
+
+<div class="values-grid">
+
+
+<article class="value-card glass-card">
+
+
+    <div class="value-image">
+
+
+        <img src="img/valores/humildad.jpg"
+             alt="Representación de la humildad"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="value-content">
+
+
+        <i class="fa-solid fa-hands-praying"></i>
+
+
+        <h3>
+
+            Humildad
+
+        </h3>
+
+
+
+        <p>
+
+            La humildad es uno de los valores fundamentales de la obra. 
+            Calderón muestra que ninguna posición social hace superior a una
+            persona frente a las demás.
+
+        </p>
+
+
+
+        <p>
+
+            El Rey, el Rico y el Pobre tienen la misma importancia ante el
+            juicio final, porque lo que realmente importa son sus acciones.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    IGUALDAD
+=======================================================-->
+
+
+<article class="value-card glass-card">
+
+
+    <div class="value-image">
+
+
+        <img src="img/valores/igualdad.jpg"
+             alt="Representación de igualdad"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="value-content">
+
+
+        <i class="fa-solid fa-scale-balanced"></i>
+
+
+        <h3>
+
+            Igualdad
+
+        </h3>
+
+
+
+        <p>
+
+            La obra defiende que todos los seres humanos poseen la misma
+            dignidad, sin importar su riqueza, poder o condición social.
+
+        </p>
+
+
+
+        <p>
+
+            Aunque cada personaje recibe un papel diferente, todos participan
+            en la misma representación de la vida.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    JUSTICIA
+=======================================================-->
+
+<article class="value-card glass-card">
+
+
+    <div class="value-image">
+
+
+        <img src="img/valores/justicia.jpg"
+             alt="Representación de justicia"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="value-content">
+
+
+        <i class="fa-solid fa-gavel"></i>
+
+
+        <h3>
+
+            Justicia
+
+        </h3>
+
+
+
+        <p>
+
+            La justicia aparece mediante el momento en que los personajes
+            deben responder por la manera en que desempeñaron su papel.
+
+        </p>
+
+
+
+        <p>
+
+            Calderón plantea que toda acción humana tiene consecuencias y que
+            cada persona debe asumir responsabilidad por sus decisiones.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    FE
+=======================================================-->
+
+<article class="value-card glass-card">
+
+
+    <div class="value-image">
+
+
+        <img src="img/valores/fe.jpg"
+             alt="Representación de la fe"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="value-content">
+
+
+        <i class="fa-solid fa-cross"></i>
+
+
+        <h3>
+
+            Fe
+
+        </h3>
+
+
+
+        <p>
+
+            Como auto sacramental, la obra refleja la importancia de la fe
+            cristiana y la relación entre el ser humano y Dios.
+
+        </p>
+
+
+
+        <p>
+
+            La fe funciona como guía moral para que los personajes comprendan
+            el sentido de sus acciones.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    RESPONSABILIDAD
+=======================================================-->
+
+<article class="value-card glass-card">
+
+
+    <div class="value-image">
+
+
+        <img src="img/valores/responsabilidad.jpg"
+             alt="Representación de responsabilidad"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="value-content">
+
+
+        <i class="fa-solid fa-list-check"></i>
+
+
+        <h3>
+
+            Responsabilidad
+
+        </h3>
+
+
+
+        <p>
+
+            Cada personaje recibe una misión dentro del teatro de la vida y
+            debe cumplirla correctamente.
+
+        </p>
+
+
+
+        <p>
+
+            La obra enseña que las personas deben utilizar sus capacidades y
+            oportunidades de manera adecuada.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    SOLIDARIDAD
+=======================================================-->
+
+<article class="value-card glass-card">
+
+
+    <div class="value-image">
+
+
+        <img src="img/valores/solidaridad.jpg"
+             alt="Representación de solidaridad"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="value-content">
+
+
+        <i class="fa-solid fa-people-group"></i>
+
+
+        <h3>
+
+            Solidaridad
+
+        </h3>
+
+
+
+        <p>
+
+            Calderón muestra la importancia de reconocer la dignidad de otros
+            personajes, especialmente de quienes poseen menos recursos.
+
+        </p>
+
+
+
+        <p>
+
+            La ayuda y la compasión son presentadas como cualidades
+            fundamentales del ser humano.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    GENEROSIDAD
+=======================================================-->
+
+<article class="value-card glass-card">
+
+
+    <div class="value-image">
+
+
+        <img src="img/valores/generosidad.jpg"
+             alt="Representación de generosidad"
+             loading="lazy">
+
+
+    </div>
+
+
+
+    <div class="value-content">
+
+
+        <i class="fa-solid fa-hand-holding-heart"></i>
+
+
+        <h3>
+
+            Generosidad
+
+        </h3>
+
+
+
+        <p>
+
+            La riqueza y los talentos recibidos no deben utilizarse solo para
+            beneficio personal.
+
+        </p>
+
+
+
+        <p>
+
+            La obra enseña que compartir y ayudar a los demás es una forma de
+            cumplir correctamente el papel asignado por el Autor.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
 
 </div>
 
+
+
+
+
+<!--======================================================
+                REFLEXIÓN FINAL
+=======================================================-->
+
+<blockquote class="historic-quote">
+
+
+    <i class="fa-solid fa-quote-left"></i>
+
+
+
+    <p>
+
+        El valor de una persona no está en el papel que recibe, sino en la
+        forma responsable, justa y humana con la que lo representa.
+
+    </p>
+
+
+
+</blockquote>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.6
+
+        SIGUIENTE:
+        PARTE 1.7
+        TEMAS PRINCIPALES DE LA OBRA
+=======================================================-->
+
+</section>
+<!--======================================================
+                TEMAS PRINCIPALES DE LA OBRA
+=======================================================-->
+
+<section id="temas" class="themes-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            Análisis de la obra
+
+        </span>
+
+
+
+        <h2>
+
+            Temas principales de
+            <em>El gran teatro del mundo</em>
+
+        </h2>
+
+
+
+        <p>
+
+            Calderón utiliza símbolos y personajes alegóricos para reflexionar
+            sobre los grandes problemas de la existencia humana.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<div class="themes-grid">
+
+
+
+
+
+<!--======================================================
+            LA VIDA COMO TEATRO
+=======================================================-->
+
+<article class="theme-card glass-card">
+
+
+    <div class="theme-image">
+
+
+        <img src="img/temas/vida-teatro.jpg"
+             alt="La vida representada como teatro"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="theme-content">
+
+
+        <i class="fa-solid fa-masks-theater"></i>
+
+
+
+        <h3>
+
+            La vida como teatro
+
+        </h3>
+
+
+
+        <p>
+
+            Este es el tema central de la obra. Calderón presenta la vida
+            humana como una representación teatral donde cada persona recibe
+            un papel diferente.
+
+        </p>
+
+
+
+        <p>
+
+            El ser humano no elige completamente las circunstancias en las
+            que nace, pero sí puede decidir cómo actuar dentro de ellas.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+            IGUALDAD ANTE DIOS
+=======================================================-->
+
+<article class="theme-card glass-card">
+
+
+    <div class="theme-image">
+
+
+        <img src="img/temas/igualdad-dios.jpg"
+             alt="Igualdad espiritual"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="theme-content">
+
+
+        <i class="fa-solid fa-scale-balanced"></i>
+
+
+
+        <h3>
+
+            Igualdad ante Dios
+
+        </h3>
+
+
+
+        <p>
+
+            Aunque los personajes poseen diferentes posiciones sociales,
+            todos tienen la misma importancia frente al Autor.
+
+        </p>
+
+
+
+        <p>
+
+            La obra cuestiona la idea de que el poder o la riqueza hacen
+            superior a una persona.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+            RIQUEZA Y POBREZA
+=======================================================-->
+
+<article class="theme-card glass-card">
+
+
+    <div class="theme-image">
+
+
+        <img src="img/temas/riqueza-pobreza.jpg"
+             alt="Contraste entre riqueza y pobreza"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="theme-content">
+
+
+        <i class="fa-solid fa-coins"></i>
+
+
+
+        <h3>
+
+            Riqueza y pobreza
+
+        </h3>
+
+
+
+        <p>
+
+            Calderón muestra el contraste entre quienes poseen bienes
+            materiales y quienes viven en condiciones humildes.
+
+        </p>
+
+
+
+        <p>
+
+            La enseñanza principal es que las riquezas son temporales y no
+            determinan la verdadera grandeza de una persona.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    LA MUERTE
+=======================================================-->
+
+<article class="theme-card glass-card">
+
+
+    <div class="theme-image">
+
+
+        <img src="img/temas/muerte.jpg"
+             alt="Representación simbólica de la muerte"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="theme-content">
+
+
+        <i class="fa-solid fa-hourglass-end"></i>
+
+
+
+        <h3>
+
+            La muerte
+
+        </h3>
+
+
+
+        <p>
+
+            La muerte representa el momento en que termina la representación
+            y cada personaje debe entregar cuentas sobre su actuación.
+
+        </p>
+
+
+
+        <p>
+
+            Recuerda que la existencia humana es limitada y que las acciones
+            realizadas durante la vida tienen importancia.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    EL DESTINO
+=======================================================-->
+
+<article class="theme-card glass-card">
+
+
+    <div class="theme-image">
+
+
+        <img src="img/temas/destino.jpg"
+             alt="Representación del destino"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="theme-content">
+
+
+        <i class="fa-solid fa-route"></i>
+
+
+
+        <h3>
+
+            Destino y libertad
+
+        </h3>
+
+
+
+        <p>
+
+            La obra plantea una reflexión sobre el destino humano y la
+            capacidad de las personas para tomar decisiones.
+
+        </p>
+
+
+
+        <p>
+
+            Aunque cada personaje recibe un papel determinado, tiene libertad
+            para decidir cómo interpretarlo.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                    JUICIO FINAL
+=======================================================-->
+
+<article class="theme-card glass-card">
+
+
+    <div class="theme-image">
+
+
+        <img src="img/temas/juicio-final.jpg"
+             alt="Representación del juicio final"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="theme-content">
+
+
+        <i class="fa-solid fa-gavel"></i>
+
+
+
+        <h3>
+
+            Juicio final
+
+        </h3>
+
+
+
+        <p>
+
+            Al finalizar la obra, los personajes deben presentarse ante el
+            Autor para recibir la valoración de sus acciones.
+
+        </p>
+
+
+
+        <p>
+
+            Este momento representa la justicia divina y la importancia de
+            haber actuado correctamente durante la vida.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                MAPA DE IDEAS
+=======================================================-->
+
+<section class="idea-map glass-card">
+
+
+    <h3>
+
+        <i class="fa-solid fa-diagram-project"></i>
+
+        Relación entre los temas
+
+    </h3>
+
+
+
+
+    <div class="map-container">
+
+
+        <div class="map-item">
+
+            Vida
+
+        </div>
+
+
+
+        <span>
+
+            ↓
+
+        </span>
+
+
+
+        <div class="map-item">
+
+            Acciones humanas
+
+        </div>
+
+
+
+        <span>
+
+            ↓
+
+        </span>
+
+
+
+        <div class="map-item">
+
+            Juicio final
+
+        </div>
+
+
+
+        <span>
+
+            ↓
+
+        </span>
+
+
+
+        <div class="map-item">
+
+            Recompensa o consecuencia
+
+        </div>
+
+
+    </div>
+
+
+
 </section>
 
-</main>
 
-<footer>
 
-<p>De Jhonny Ormeño • El Gran Teatro del Mundo</p>
- 
-<p><a href="https://www.youtube.com/watch?v=xk7fSD6MZeg" target="_blank" rel="noopener noreferrer">
-    Más información sobre El gran teatro del mundo
-</a></p>
+
+
+<!--======================================================
+        FIN PARTE 1.7
+
+        SIGUIENTE:
+        PARTE 1.8
+        MENSAJE DE LA OBRA
+=======================================================-->
+
+</section>
+<!--======================================================
+                MENSAJE DE LA OBRA
+=======================================================-->
+
+<section id="mensaje" class="message-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-comment"></i>
+
+            Reflexión final
+
+        </span>
+
+
+
+        <h2>
+
+            El mensaje de
+            <em>El gran teatro del mundo</em>
+
+        </h2>
+
+
+
+        <p>
+
+            Una obra del siglo XVII que continúa planteando preguntas
+            importantes sobre la vida humana.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                IDEA PRINCIPAL
+=======================================================-->
+
+<article class="message-main glass-card">
+
+
+    <div class="message-image">
+
+
+        <img src="img/mensaje/reflexion-vida.jpg"
+             alt="Reflexión sobre la vida humana"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="message-content">
+
+
+        <h3>
+
+            La importancia de cómo vivimos nuestro papel
+
+        </h3>
+
+
+
+        <p>
+
+            El mensaje principal de la obra es que la vida humana puede
+            compararse con una gran representación teatral donde cada persona
+            recibe un papel diferente.
+
+        </p>
+
+
+
+        <p>
+
+            Algunas personas nacen con riqueza, poder o reconocimiento,
+            mientras que otras viven situaciones más difíciles. Sin embargo,
+            Calderón afirma que ninguna condición determina el verdadero valor
+            de un ser humano.
+
+        </p>
+
+
+
+        <p>
+
+            Lo importante no es el papel recibido, sino la forma en que cada
+            persona lo interpreta: con responsabilidad, justicia, humildad y
+            solidaridad.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+            ENSEÑANZA MORAL
+=======================================================-->
+
+<section class="message-grid">
+
+
+
+    <article class="message-card glass-card">
+
+
+        <i class="fa-solid fa-user-check"></i>
+
+
+        <h3>
+
+            Responsabilidad personal
+
+        </h3>
+
+
+        <p>
+
+            Cada persona debe hacerse responsable de sus decisiones y
+            acciones, porque todas tienen consecuencias.
+
+        </p>
+
+
+    </article>
+
+
+
+
+
+    <article class="message-card glass-card">
+
+
+        <i class="fa-solid fa-heart"></i>
+
+
+        <h3>
+
+            Valor humano
+
+        </h3>
+
+
+        <p>
+
+            La dignidad de una persona no depende de sus riquezas, apariencia
+            o posición social.
+
+        </p>
+
+
+    </article>
+
+
+
+
+
+    <article class="message-card glass-card">
+
+
+        <i class="fa-solid fa-people-arrows"></i>
+
+
+        <h3>
+
+            Convivencia
+
+        </h3>
+
+
+        <p>
+
+            La obra invita a respetar a los demás y reconocer que todos
+            cumplen una función dentro de la sociedad.
+
+        </p>
+
+
+    </article>
+
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+            ACTUALIDAD DE LA OBRA
+=======================================================-->
+
+<article class="biography-block glass-card">
+
+
+    <div class="biography-image">
+
+
+        <img src="img/mensaje/teatro-actual.jpg"
+             alt="Representación teatral moderna"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="biography-content">
+
+
+        <h3>
+
+            ¿Por qué sigue siendo importante actualmente?
+
+        </h3>
+
+
+
+        <p>
+
+            Aunque fue escrita en el siglo XVII, la obra continúa teniendo
+            relevancia porque muchos de sus temas siguen presentes en la
+            sociedad actual.
+
+        </p>
+
+
+
+        <p>
+
+            Las diferencias económicas, la búsqueda de reconocimiento, el
+            abuso del poder y la necesidad de actuar con valores siguen siendo
+            problemas que afectan a las personas.
+
+        </p>
+
+
+
+        <p>
+
+            Por esta razón, <em>El gran teatro del mundo</em> no solo es una
+            obra religiosa del Barroco, sino también una reflexión universal
+            sobre la conducta humana.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                FRASE DESTACADA
+=======================================================-->
+
+<section class="quote-banner">
+
+
+    <div class="quote-icon">
+
+
+        <i class="fa-solid fa-quote-left"></i>
+
+
+    </div>
+
+
+
+
+    <blockquote>
+
+
+        <p>
+
+            "No importa el papel que recibimos en la vida, sino la forma en
+            que decidimos representarlo."
+
+        </p>
+
+
+        <cite>
+
+            Reflexión basada en la enseñanza de Calderón de la Barca
+
+        </cite>
+
+
+    </blockquote>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+                LEGADO ACTUAL
+=======================================================-->
+
+<article class="message-main glass-card">
+
+
+    <div class="message-image">
+
+
+        <img src="img/mensaje/legado-obra.jpg"
+             alt="Legado teatral de Calderón"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="message-content">
+
+
+        <h3>
+
+            Una obra que permanece vigente
+
+        </h3>
+
+
+
+        <p>
+
+            La permanencia de la obra demuestra la capacidad del teatro
+            clásico para expresar problemas que pertenecen a todas las
+            épocas.
+
+        </p>
+
+
+
+        <p>
+
+            Calderón logró convertir una enseñanza religiosa del Barroco en
+            una reflexión profunda sobre la existencia humana, razón por la
+            cual su obra continúa siendo estudiada y representada.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.8
+
+        SIGUIENTE:
+        PARTE 1.9
+        FRASES IMPORTANTES DE LA OBRA
+=======================================================-->
+
+</section>
+<!--======================================================
+                FRASES IMPORTANTES
+=======================================================-->
+
+<section id="frases" class="quotes-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-scroll"></i>
+
+            Palabras de la obra
+
+        </span>
+
+
+
+        <h2>
+
+            Frases importantes de
+            <em>El gran teatro del mundo</em>
+
+        </h2>
+
+
+
+        <p>
+
+            Las frases de la obra reflejan las ideas centrales de Calderón
+            sobre la vida, la responsabilidad y la condición humana.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                IMAGEN DECORATIVA
+=======================================================-->
+
+<div class="quote-background">
+
+
+    <img src="img/frases/pergamino-barroco.jpg"
+         alt="Pergamino antiguo barroco"
+         loading="lazy">
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                    FRASES
+=======================================================-->
+
+<div class="quotes-grid">
+
+
+
+
+
+<!-- FRASE 1 -->
+
+<article class="quote-card glass-card">
+
+
+    <i class="fa-solid fa-quote-left"></i>
+
+
+
+    <h3>
+
+        La vida como representación
+
+    </h3>
+
+
+
+    <p class="quote-text">
+
+        "La vida es una representación donde cada persona desempeña un
+        papel."
+
+    </p>
+
+
+
+    <p>
+
+        Esta idea resume el concepto principal de la obra: el mundo es un
+        escenario temporal donde cada ser humano debe cumplir una función.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- FRASE 2 -->
+
+<article class="quote-card glass-card">
+
+
+    <i class="fa-solid fa-scale-balanced"></i>
+
+
+
+    <h3>
+
+        Igualdad humana
+
+    </h3>
+
+
+
+    <p class="quote-text">
+
+        "Todos han de representar su papel con igualdad ante el Autor."
+
+    </p>
+
+
+
+    <p>
+
+        Calderón muestra que las diferencias sociales desaparecen cuando los
+        seres humanos son evaluados por sus acciones.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- FRASE 3 -->
+
+<article class="quote-card glass-card">
+
+
+    <i class="fa-solid fa-clock"></i>
+
+
+
+    <h3>
+
+        El paso del tiempo
+
+    </h3>
+
+
+
+    <p class="quote-text">
+
+        "El mundo es solo un teatro donde todo termina cuando acaba la
+        función."
+
+    </p>
+
+
+
+    <p>
+
+        La frase representa la idea barroca de que la existencia es
+        pasajera y que los bienes materiales no son permanentes.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- FRASE 4 -->
+
+<article class="quote-card glass-card">
+
+
+    <i class="fa-solid fa-hand-holding-heart"></i>
+
+
+
+    <h3>
+
+        La importancia de las acciones
+
+    </h3>
+
+
+
+    <p class="quote-text">
+
+        "No vale el lugar que ocupas, sino cómo cumples tu obligación."
+
+    </p>
+
+
+
+    <p>
+
+        La obra enseña que el valor de una persona depende de su conducta y
+        no del papel social que posee.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- FRASE 5 -->
+
+<article class="quote-card glass-card">
+
+
+    <i class="fa-solid fa-star"></i>
+
+
+
+    <h3>
+
+        Virtud y dignidad
+
+    </h3>
+
+
+
+    <p class="quote-text">
+
+        "La grandeza está en obrar bien y no en tener más."
+
+    </p>
+
+
+
+    <p>
+
+        Calderón critica la importancia excesiva que algunas personas dan al
+        poder y la riqueza.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- FRASE 6 -->
+
+<article class="quote-card glass-card">
+
+
+    <i class="fa-solid fa-church"></i>
+
+
+
+    <h3>
+
+        Dimensión espiritual
+
+    </h3>
+
+
+
+    <p class="quote-text">
+
+        "Al final todos vuelven al Autor que los creó."
+
+    </p>
+
+
+
+    <p>
+
+        Expresa la visión religiosa del auto sacramental y la relación entre
+        Dios y el ser humano.
+
+    </p>
+
+
+</article>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+            REFLEXIÓN SOBRE LAS FRASES
+=======================================================-->
+
+<section class="quote-analysis glass-card">
+
+
+    <h3>
+
+        <i class="fa-solid fa-book-open-reader"></i>
+
+        Interpretación literaria
+
+    </h3>
+
+
+
+    <p>
+
+        Las frases de la obra muestran una de las preocupaciones principales
+        del Barroco: la reflexión sobre la fugacidad de la vida. Calderón
+        utiliza el teatro como una metáfora para explicar que las personas
+        pasan por el mundo durante un tiempo limitado y deben aprovecharlo
+        actuando correctamente.
+
+    </p>
+
+
+
+    <p>
+
+        Estas ideas siguen siendo actuales porque plantean preguntas sobre
+        nuestra responsabilidad, nuestras decisiones y la forma en que nos
+        relacionamos con los demás.
+
+    </p>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.9
+
+        SIGUIENTE:
+        PARTE 1.10
+        CURIOSIDADES DE LA OBRA
+=======================================================-->
+
+</section>
+<!--======================================================
+                CURIOSIDADES DE LA OBRA
+=======================================================-->
+
+<section id="curiosidades" class="curiosities-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            Datos interesantes
+
+        </span>
+
+
+
+        <h2>
+
+            Curiosidades sobre
+            <em>El gran teatro del mundo</em>
+
+        </h2>
+
+
+
+        <p>
+
+            Algunos datos que permiten comprender mejor la importancia de esta
+            obra dentro del teatro español.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                IMAGEN PRINCIPAL
+=======================================================-->
+
+<div class="curiosity-cover">
+
+
+    <img src="img/curiosidades/teatro-barroco-curiosidades.jpg"
+         alt="Teatro barroco español"
+         loading="lazy">
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                TARJETAS
+=======================================================-->
+
+<div class="curiosities-grid">
+
+
+
+
+
+<!-- 1 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-calendar"></i>
+
+
+    <h3>
+
+        1. Fue escrita en el siglo XVII
+
+    </h3>
+
+
+
+    <p>
+
+        La obra pertenece al período del Barroco español, una época marcada
+        por una profunda reflexión sobre la religión, la sociedad y la
+        existencia humana.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 2 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-masks-theater"></i>
+
+
+    <h3>
+
+        2. Es un auto sacramental
+
+    </h3>
+
+
+
+    <p>
+
+        Este género teatral tenía una finalidad religiosa y normalmente se
+        representaba durante celebraciones relacionadas con la fe católica.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 3 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-earth-europe"></i>
+
+
+    <h3>
+
+        3. La vida como escenario
+
+    </h3>
+
+
+
+    <p>
+
+        Calderón utilizó una de las metáforas más famosas de la literatura:
+        comparar la vida humana con una obra teatral.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 4 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-user-group"></i>
+
+
+    <h3>
+
+        4. Personajes simbólicos
+
+    </h3>
+
+
+
+    <p>
+
+        Los personajes no representan únicamente personas, sino ideas como
+        poder, pobreza, belleza, inteligencia y fe.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 5 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-building-columns"></i>
+
+
+    <h3>
+
+        5. Relación con la sociedad española
+
+    </h3>
+
+
+
+    <p>
+
+        La obra refleja la organización social del siglo XVII, donde
+        existían grandes diferencias entre clases sociales.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 6 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-book"></i>
+
+
+    <h3>
+
+        6. Forma parte del legado barroco
+
+    </h3>
+
+
+
+    <p>
+
+        Es considerada una de las obras más importantes del teatro religioso
+        español del Siglo de Oro.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 7 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-chess"></i>
+
+
+    <h3>
+
+        7. Cada personaje recibe un papel
+
+    </h3>
+
+
+
+    <p>
+
+        La asignación de papeles representa las diferentes circunstancias
+        que las personas reciben al nacer.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 8 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-hourglass-half"></i>
+
+
+    <h3>
+
+        8. Reflexiona sobre la muerte
+
+    </h3>
+
+
+
+    <p>
+
+        La obra recuerda que la vida es temporal y que las acciones tienen
+        consecuencias.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 9 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-palette"></i>
+
+
+    <h3>
+
+        9. Une teatro y filosofía
+
+    </h3>
+
+
+
+    <p>
+
+        Calderón combina elementos teatrales con preguntas profundas sobre
+        libertad, destino y sentido de la existencia.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 10 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-globe"></i>
+
+
+    <h3>
+
+        10. Sigue representándose actualmente
+
+    </h3>
+
+
+
+    <p>
+
+        La obra continúa siendo estudiada y presentada en diferentes países
+        por su mensaje universal.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 11 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-feather"></i>
+
+
+    <h3>
+
+        11. Calderón fue sacerdote
+
+    </h3>
+
+
+
+    <p>
+
+        Su formación religiosa influyó en muchas de sus obras, especialmente
+        en sus autos sacramentales.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<!-- 12 -->
+
+<article class="curiosity-card glass-card">
+
+
+    <i class="fa-solid fa-crown"></i>
+
+
+    <h3>
+
+        12. Fue representada en ambientes cortesanos
+
+    </h3>
+
+
+
+    <p>
+
+        El teatro tenía una gran importancia cultural dentro de la corte
+        española del siglo XVII.
+
+    </p>
+
+
+</article>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+            DATO DESTACADO
+=======================================================-->
+
+<section class="featured-fact glass-card">
+
+
+    <i class="fa-solid fa-star"></i>
+
+
+
+    <h3>
+
+        Dato destacado
+
+    </h3>
+
+
+
+    <p>
+
+        La mayor innovación de Calderón fue convertir conceptos abstractos
+        como la vida, la muerte, la belleza o la riqueza en personajes que
+        podían actuar sobre un escenario.
+
+    </p>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.10
+
+        SIGUIENTE:
+        PARTE 1.11
+        LÍNEA DEL TIEMPO COMPLETA
+=======================================================-->
+
+</section>
+<!--======================================================
+                LÍNEA DEL TIEMPO
+=======================================================-->
+
+<section id="timeline" class="timeline-main-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            Historia
+
+        </span>
+
+
+
+        <h2>
+
+            Línea del tiempo de Pedro Calderón de la Barca
+
+        </h2>
+
+
+
+        <p>
+
+            Principales acontecimientos de la vida del autor y la evolución
+            de su legado literario.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<div class="modern-timeline">
+
+
+
+
+
+<!--========================
+        1600
+=========================-->
+
+<article class="timeline-card glass-card">
+
+
+    <div class="timeline-year">
+
+        1600
+
+    </div>
+
+
+
+    <div class="timeline-image">
+
+
+        <img src="img/timeline/nacimiento-calderon.jpg"
+             alt="Nacimiento de Calderón de la Barca"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="timeline-info">
+
+
+        <h3>
+
+            Nacimiento del autor
+
+        </h3>
+
+
+
+        <p>
+
+            Pedro Calderón de la Barca nace el 17 de enero en Madrid,
+            España, dentro de una familia relacionada con la administración
+            de la corte.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--========================
+        1614-1620
+=========================-->
+
+<article class="timeline-card glass-card">
+
+
+    <div class="timeline-year">
+
+        1614 - 1620
+
+    </div>
+
+
+
+    <div class="timeline-image">
+
+
+        <img src="img/timeline/estudios-calderon.jpg"
+             alt="Estudios de Calderón"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="timeline-info">
+
+
+        <h3>
+
+            Formación académica
+
+        </h3>
+
+
+
+        <p>
+
+            Estudia humanidades, filosofía y teología. Su educación influye
+            posteriormente en la profundidad intelectual de sus obras.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--========================
+        1620
+=========================-->
+
+<article class="timeline-card glass-card">
+
+
+    <div class="timeline-year">
+
+        1620
+
+    </div>
+
+
+
+    <div class="timeline-image">
+
+
+        <img src="img/timeline/teatro-siglo-xvii.jpg"
+             alt="Teatro español del siglo XVII"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="timeline-info">
+
+
+        <h3>
+
+            Inicio de su carrera literaria
+
+        </h3>
+
+
+
+        <p>
+
+            Comienza a destacar como dramaturgo dentro del ambiente teatral
+            español del Siglo de Oro.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--========================
+        1635
+=========================-->
+
+<article class="timeline-card glass-card">
+
+
+    <div class="timeline-year">
+
+        1635
+
+    </div>
+
+
+
+    <div class="timeline-info">
+
+
+        <h3>
+
+            Reconocimiento artístico
+
+        </h3>
+
+
+
+        <p>
+
+            Sus obras alcanzan gran prestigio y comienza a ser considerado
+            uno de los principales autores teatrales de España.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--========================
+        1651
+=========================-->
+
+<article class="timeline-card glass-card">
+
+
+    <div class="timeline-year">
+
+        1651
+
+    </div>
+
+
+
+    <div class="timeline-image">
+
+
+        <img src="img/timeline/sacerdote-calderon.jpg"
+             alt="Calderón sacerdote"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="timeline-info">
+
+
+        <h3>
+
+            Ordenación sacerdotal
+
+        </h3>
+
+
+
+        <p>
+
+            Calderón es ordenado sacerdote y aumenta su dedicación a la
+            escritura de autos sacramentales.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--========================
+        1655
+=========================-->
+
+<article class="timeline-card glass-card">
+
+
+    <div class="timeline-year">
+
+        1655
+
+    </div>
+
+
+
+    <div class="timeline-info">
+
+
+        <h3>
+
+            Escritura de <em>El gran teatro del mundo</em>
+
+        </h3>
+
+
+
+        <p>
+
+            Durante esta etapa escribe una de sus obras más importantes,
+            donde representa la vida humana como un escenario creado por
+            Dios.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--========================
+        1681
+=========================-->
+
+<article class="timeline-card glass-card">
+
+
+    <div class="timeline-year">
+
+        1681
+
+    </div>
+
+
+
+    <div class="timeline-image">
+
+
+        <img src="img/timeline/muerte-calderon.jpg"
+             alt="Fallecimiento de Calderón"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="timeline-info">
+
+
+        <h3>
+
+            Fallecimiento
+
+        </h3>
+
+
+
+        <p>
+
+            Pedro Calderón de la Barca muere el 25 de mayo en Madrid,
+            dejando una enorme influencia en la literatura universal.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--========================
+        ACTUALIDAD
+=========================-->
+
+<article class="timeline-card glass-card">
+
+
+    <div class="timeline-year">
+
+        Actualidad
+
+    </div>
+
+
+
+    <div class="timeline-image">
+
+
+        <img src="img/timeline/legado-actual.jpg"
+             alt="Representaciones actuales"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="timeline-info">
+
+
+        <h3>
+
+            Vigencia de su obra
+
+        </h3>
+
+
+
+        <p>
+
+            Sus obras continúan estudiándose y representándose en teatros de
+            todo el mundo por la profundidad de sus ideas.
+
+        </p>
+
+
+    </div>
+
+
+</article>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+            CONTADOR HISTÓRICO
+=======================================================-->
+
+<section class="history-counter glass-card">
+
+
+    <h3>
+
+        <i class="fa-solid fa-chart-simple"></i>
+
+        Datos históricos
+
+    </h3>
+
+
+
+
+    <div class="counter-grid">
+
+
+        <div class="counter-item">
+
+
+            <span data-target="426">
+
+                0
+
+            </span>
+
+
+            <p>
+
+                años desde su nacimiento
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <div class="counter-item">
+
+
+            <span data-target="300">
+
+                0
+
+            </span>
+
+
+            <p>
+
+                años de influencia literaria
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <div class="counter-item">
+
+
+            <span data-target="1">
+
+                0
+
+            </span>
+
+
+            <p>
+
+                gran legado universal
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.11
+
+        SIGUIENTE:
+        PARTE 1.12
+        GALERÍA DE IMÁGENES
+=======================================================-->
+
+</section>
+<!--======================================================
+                    GALERÍA DE IMÁGENES
+=======================================================-->
+
+<section id="galeria" class="gallery-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-image"></i>
+
+            Colección visual
+
+        </span>
+
+
+
+        <h2>
+
+            Galería de
+            <em>El gran teatro del mundo</em>
+
+        </h2>
+
+
+
+        <p>
+
+            Una recopilación visual relacionada con el teatro barroco, la
+            época de Calderón y los elementos simbólicos de la obra.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                GALERÍA GRID
+=======================================================-->
+
+<div class="gallery-grid">
+
+
+
+
+
+<!-- IMAGEN 1 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/teatro-barroco.jpg"
+         alt="Teatro barroco español"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Teatro barroco del Siglo de Oro
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 2 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/calderon-retrato.jpg"
+         alt="Retrato de Pedro Calderón de la Barca"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Pedro Calderón de la Barca
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 3 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/manuscrito-antiguo.jpg"
+         alt="Manuscrito antiguo"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Manuscritos del siglo XVII
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 4 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/escenario-barroco.jpg"
+         alt="Escenario teatral barroco"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Escenario teatral antiguo
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 5 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/actores-barrocos.jpg"
+         alt="Actores del teatro barroco"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Actores representando teatro clásico
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 6 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/vestuario-teatral.jpg"
+         alt="Vestuario teatral antiguo"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Vestuario del teatro barroco
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 7 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/publico-antiguo.jpg"
+         alt="Público en un teatro antiguo"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Público del teatro español antiguo
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 8 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/pintura-religiosa.jpg"
+         alt="Pintura religiosa barroca"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Arte religioso del Barroco
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 9 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/auto-sacramental.jpg"
+         alt="Representación de auto sacramental"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Representaciones religiosas
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 10 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/simbolos-cristianos.jpg"
+         alt="Símbolos religiosos"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Símbolos espirituales de la obra
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 11 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/teatro-espanol.jpg"
+         alt="Teatro español clásico"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Teatro español del Siglo de Oro
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+
+<!-- IMAGEN 12 -->
+
+<figure class="gallery-item">
+
+
+    <img src="img/galeria/representacion-moderna.jpg"
+         alt="Representación moderna de Calderón"
+         loading="lazy">
+
+
+
+    <figcaption>
+
+        Representaciones actuales
+
+    </figcaption>
+
+
+</figure>
+
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+            SECCIÓN DESTACADA
+=======================================================-->
+
+<section class="gallery-highlight glass-card">
+
+
+    <div>
+
+
+        <i class="fa-solid fa-camera-retro"></i>
+
+
+
+        <h3>
+
+            El teatro como memoria histórica
+
+        </h3>
+
+
+
+        <p>
+
+            Las imágenes permiten comprender cómo el teatro barroco unía
+            literatura, arte, religión y sociedad. Cada elemento visual
+            representa una parte del mundo cultural en el que vivió Calderón.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.12
+
+        SIGUIENTE:
+        PARTE 1.13
+        VIDEO SOBRE LA OBRA
+=======================================================-->
+
+</section>
+<!--======================================================
+                    VIDEO DE LA OBRA
+=======================================================-->
+
+<section id="video" class="video-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-brands fa-youtube"></i>
+
+            Recurso audiovisual
+
+        </span>
+
+
+
+        <h2>
+
+            Representación y explicación de la obra
+
+        </h2>
+
+
+
+        <p>
+
+            Observa una adaptación audiovisual que permite comprender mejor
+            los personajes, símbolos y mensaje de
+            <em>El gran teatro del mundo</em>.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                CONTENEDOR DEL VIDEO
+=======================================================-->
+
+<div class="video-container glass-card">
+
+
+
+    <div class="youtube-box">
+
+
+        <iframe
+
+        src="https://www.youtube.com/embed/4sQ2F6mR6bQ"
+
+        title="El gran teatro del mundo - Calderón de la Barca"
+
+        allowfullscreen>
+
+        </iframe>
+
+
+    </div>
+
+
+
+
+
+    <div class="video-info">
+
+
+        <i class="fa-solid fa-film"></i>
+
+
+
+        <h3>
+
+            El teatro barroco como herramienta educativa
+
+        </h3>
+
+
+
+        <p>
+
+            Las representaciones audiovisuales ayudan a comprender cómo los
+            autos sacramentales combinaban elementos teatrales, religiosos y
+            filosóficos para transmitir enseñanzas al público del siglo XVII.
+
+        </p>
+
+
+
+        <p>
+
+            Gracias al lenguaje visual podemos observar la importancia del
+            escenario, el vestuario y los símbolos utilizados por Calderón.
+
+        </p>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                DATOS DEL VIDEO
+=======================================================-->
+
+<div class="video-cards">
+
+
+
+    <article class="mini-info-card glass-card">
+
+
+        <i class="fa-solid fa-masks-theater"></i>
+
+
+        <h3>
+
+            Género
+
+        </h3>
+
+
+        <p>
+
+            Auto sacramental del Barroco español.
+
+        </p>
+
+
+    </article>
+
+
+
+
+
+    <article class="mini-info-card glass-card">
+
+
+        <i class="fa-solid fa-book-open"></i>
+
+
+        <h3>
+
+            Tema
+
+        </h3>
+
+
+        <p>
+
+            La vida humana como una representación teatral.
+
+        </p>
+
+
+    </article>
+
+
+
+
+
+    <article class="mini-info-card glass-card">
+
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+
+        <h3>
+
+            Utilidad
+
+        </h3>
+
+
+        <p>
+
+            Facilita el aprendizaje de la obra mediante imágenes y sonido.
+
+        </p>
+
+
+    </article>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+            MENSAJE AUDIOVISUAL
+=======================================================-->
+
+<section class="video-message glass-card">
+
+
+    <i class="fa-solid fa-quote-left"></i>
+
+
+
+    <blockquote>
+
+
+        <p>
+
+            El teatro no solo representa historias: también refleja las
+            preguntas más profundas del ser humano.
+
+        </p>
+
+
+
+        <cite>
+
+            Reflexión sobre el teatro barroco
+
+        </cite>
+
+
+    </blockquote>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.13
+
+        SIGUIENTE:
+        PARTE 1.14
+        DATOS INTERESANTES Y TABLA INFORMATIVA
+=======================================================-->
+
+</section>
+<!--======================================================
+                DATOS INTERESANTES
+=======================================================-->
+
+<section id="datos" class="data-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            Información general
+
+        </span>
+
+
+
+        <h2>
+
+            Datos interesantes de la obra
+
+        </h2>
+
+
+
+        <p>
+
+            Información fundamental para conocer la importancia literaria e
+            histórica de <em>El gran teatro del mundo</em>.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                TABLA
+=======================================================-->
+
+<div class="table-container glass-card">
+
+
+
+<table class="literary-table">
+
+
+
+<thead>
+
+
+<tr>
+
+
+<th>
+
+<i class="fa-solid fa-book"></i>
+
+Dato
+
+</th>
+
+
+
+<th>
+
+<i class="fa-solid fa-scroll"></i>
+
+Información
+
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+
+<tbody>
+
+
+
+
+<tr>
+
+
+<td>
+
+Autor
+
+</td>
+
+
+
+<td>
+
+Pedro Calderón de la Barca
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td>
+
+Fecha aproximada
+
+</td>
+
+
+
+<td>
+
+Siglo XVII (período del Barroco español)
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td>
+
+Género literario
+
+</td>
+
+
+
+<td>
+
+Auto sacramental
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td>
+
+Movimiento artístico
+
+</td>
+
+
+
+<td>
+
+Barroco español
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td>
+
+País de origen
+
+</td>
+
+
+
+<td>
+
+España
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td>
+
+Idioma original
+
+</td>
+
+
+
+<td>
+
+Español
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td>
+
+Tipo de obra
+
+</td>
+
+
+
+<td>
+
+Drama religioso alegórico
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td>
+
+Tema principal
+
+</td>
+
+
+
+<td>
+
+La vida humana como un teatro creado por Dios
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td>
+
+Contexto histórico
+
+</td>
+
+
+
+<td>
+
+España del siglo XVII durante el Siglo de Oro
+
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+<td>
+
+Finalidad
+
+</td>
+
+
+
+<td>
+
+Transmitir una enseñanza moral y espiritual
+
+</td>
+
+
+</tr>
+
+
+
+
+
+</tbody>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                TARJETAS RESUMEN
+=======================================================-->
+
+<div class="data-cards">
+
+
+
+
+
+<article class="data-card glass-card">
+
+
+    <i class="fa-solid fa-feather-pointed"></i>
+
+
+    <h3>
+
+        Autor destacado
+
+    </h3>
+
+
+
+    <p>
+
+        Calderón de la Barca es considerado uno de los máximos representantes
+        del teatro del Siglo de Oro español.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<article class="data-card glass-card">
+
+
+    <i class="fa-solid fa-landmark"></i>
+
+
+    <h3>
+
+        Importancia histórica
+
+    </h3>
+
+
+
+    <p>
+
+        La obra refleja las ideas religiosas y sociales de la España barroca.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<article class="data-card glass-card">
+
+
+    <i class="fa-solid fa-brain"></i>
+
+
+    <h3>
+
+        Reflexión filosófica
+
+    </h3>
+
+
+
+    <p>
+
+        Plantea preguntas sobre la vida, la muerte, el destino y las
+        acciones humanas.
+
+    </p>
+
+
+</article>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+            FRASE INFORMATIVA
+=======================================================-->
+
+<section class="data-highlight glass-card">
+
+
+    <i class="fa-solid fa-star"></i>
+
+
+
+    <h3>
+
+        ¿Por qué es importante?
+
+    </h3>
+
+
+
+    <p>
+
+        <em>El gran teatro del mundo</em> continúa siendo una obra fundamental
+        porque transforma una enseñanza religiosa del siglo XVII en una
+        reflexión universal sobre el comportamiento humano.
+
+    </p>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.14
+
+        SIGUIENTE:
+        PARTE 1.15
+        CONCLUSIÓN GENERAL
+=======================================================-->
+
+</section>
+<!--======================================================
+                    CONCLUSIÓN
+=======================================================-->
+
+<section id="conclusion" class="conclusion-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            Reflexión final
+
+        </span>
+
+
+
+        <h2>
+
+            Importancia de
+            <em>El gran teatro del mundo</em>
+
+        </h2>
+
+
+
+        <p>
+
+            Una obra del Barroco español que continúa transmitiendo enseñanzas
+            universales.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                CONCLUSIÓN PRINCIPAL
+=======================================================-->
+
+<article class="conclusion-main glass-card">
+
+
+    <div class="conclusion-image">
+
+
+        <img src="img/conclusion/legado-calderon.jpg"
+             alt="Legado literario de Calderón de la Barca"
+             loading="lazy">
+
+
+    </div>
+
+
+
+
+    <div class="conclusion-text">
+
+
+        <h3>
+
+            Una reflexión que supera el tiempo
+
+        </h3>
+
+
+
+        <p>
+
+            <em>El gran teatro del mundo</em> es una de las obras más
+            representativas del teatro barroco español porque convierte una
+            idea religiosa en una profunda reflexión sobre la existencia
+            humana.
+
+        </p>
+
+
+
+        <p>
+
+            A través de la metáfora del mundo como escenario, Calderón de la
+            Barca muestra que cada persona recibe un papel diferente durante
+            su vida. Algunos poseen riqueza, poder o reconocimiento, mientras
+            otros enfrentan dificultades y limitaciones.
+
+        </p>
+
+
+
+        <p>
+
+            Sin embargo, la obra demuestra que esas diferencias son
+            temporales. Lo verdaderamente importante es la manera en que cada
+            individuo actúa, las decisiones que toma y los valores que
+            demuestra.
+
+        </p>
+
+
+
+        <p>
+
+            Más allá de su contenido religioso, la obra sigue siendo actual
+            porque plantea preguntas que todavía forman parte de la sociedad:
+            ¿cómo utilizamos nuestras oportunidades?, ¿cómo tratamos a los
+            demás?, ¿qué significado tienen nuestras acciones?
+
+        </p>
+
+
+
+    </div>
+
+
+</article>
+
+
+
+
+
+<!--======================================================
+                IDEAS PRINCIPALES
+=======================================================-->
+
+<div class="conclusion-grid">
+
+
+
+
+
+<article class="conclusion-card glass-card">
+
+
+    <i class="fa-solid fa-masks-theater"></i>
+
+
+
+    <h3>
+
+        Teatro y vida
+
+    </h3>
+
+
+
+    <p>
+
+        Calderón convierte el escenario teatral en una representación
+        simbólica de la existencia humana.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<article class="conclusion-card glass-card">
+
+
+    <i class="fa-solid fa-scale-balanced"></i>
+
+
+
+    <h3>
+
+        Igualdad
+
+    </h3>
+
+
+
+    <p>
+
+        La obra enseña que todas las personas poseen dignidad sin importar
+        sus diferencias sociales.
+
+    </p>
+
+
+</article>
+
+
+
+
+
+<article class="conclusion-card glass-card">
+
+
+    <i class="fa-solid fa-heart"></i>
+
+
+
+    <h3>
+
+        Valores humanos
+
+    </h3>
+
+
+
+    <p>
+
+        La humildad, la responsabilidad y la solidaridad son esenciales para
+        vivir correctamente.
+
+    </p>
+
+
+</article>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                REFLEXIÓN FINAL
+=======================================================-->
+
+<section class="final-reflection glass-card">
+
+
+    <i class="fa-solid fa-quote-left"></i>
+
+
+
+    <blockquote>
+
+
+        <p>
+
+            El verdadero valor de una persona no está en el papel que recibe,
+            sino en la forma honesta y responsable en que decide interpretarlo.
+
+        </p>
+
+
+
+        <cite>
+
+            Reflexión inspirada en la obra de Calderón de la Barca
+
+        </cite>
+
+
+    </blockquote>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+                CIERRE EDUCATIVO
+=======================================================-->
+
+<section class="educational-close glass-card">
+
+
+    <h3>
+
+        Una obra que permanece vigente
+
+    </h3>
+
+
+
+    <p>
+
+        Estudiar <em>El gran teatro del mundo</em> permite comprender no solo
+        una etapa fundamental de la literatura española, sino también los
+        problemas universales del ser humano. La obra demuestra que el teatro
+        puede ser una herramienta para reflexionar sobre nuestra propia vida.
+
+    </p>
+
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.15
+
+        SIGUIENTE:
+        PARTE 1.16
+        BIBLIOGRAFÍA Y FUENTES
+=======================================================-->
+
+</section>
+<!--======================================================
+                    BIBLIOGRAFÍA
+=======================================================-->
+
+<section id="bibliografia" class="bibliography-section">
+
+
+    <div class="section-title">
+
+
+        <span class="section-subtitle">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            Fuentes consultadas
+
+        </span>
+
+
+
+        <h2>
+
+            Bibliografía y referencias
+
+        </h2>
+
+
+
+        <p>
+
+            Fuentes utilizadas para la elaboración del contenido histórico y
+            literario de esta página educativa.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                IMAGEN DECORATIVA
+=======================================================-->
+
+<div class="bibliography-cover">
+
+
+    <img src="img/bibliografia/libros-antiguos.jpg"
+         alt="Libros antiguos y literatura clásica"
+         loading="lazy">
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                FUENTES
+=======================================================-->
+
+<div class="bibliography-grid">
+
+
+
+
+
+<!-- FUENTE 1 -->
+
+<article class="source-card glass-card">
+
+
+    <i class="fa-solid fa-landmark"></i>
+
+
+
+    <h3>
+
+        Biblioteca Nacional de España
+
+    </h3>
+
+
+
+    <p>
+
+        Información sobre autores, manuscritos y patrimonio literario
+        español.
+
+    </p>
+
+
+
+    <a href="https://www.bne.es"
+       target="_blank">
+
+        Visitar fuente
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+    </a>
+
+
+</article>
+
+
+
+
+
+<!-- FUENTE 2 -->
+
+<article class="source-card glass-card">
+
+
+    <i class="fa-solid fa-graduation-cap"></i>
+
+
+
+    <h3>
+
+        Instituto Cervantes
+
+    </h3>
+
+
+
+    <p>
+
+        Recursos educativos sobre literatura española y autores del Siglo de
+        Oro.
+
+    </p>
+
+
+
+    <a href="https://www.cervantes.es"
+       target="_blank">
+
+        Visitar fuente
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+    </a>
+
+
+</article>
+
+
+
+
+
+<!-- FUENTE 3 -->
+
+<article class="source-card glass-card">
+
+
+    <i class="fa-solid fa-scroll"></i>
+
+
+
+    <h3>
+
+        Obras de Calderón de la Barca
+
+    </h3>
+
+
+
+    <p>
+
+        Consulta de textos clásicos y estudios sobre el teatro barroco
+        español.
+
+    </p>
+
+
+
+    <a href="https://www.cervantesvirtual.com"
+       target="_blank">
+
+        Biblioteca Virtual Miguel de Cervantes
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+    </a>
+
+
+</article>
+
+
+
+
+
+<!-- FUENTE 4 -->
+
+<article class="source-card glass-card">
+
+
+    <i class="fa-solid fa-book"></i>
+
+
+
+    <h3>
+
+        Estudios literarios
+
+    </h3>
+
+
+
+    <p>
+
+        Investigaciones académicas sobre el Barroco, el teatro religioso y el
+        Siglo de Oro.
+
+    </p>
+
+
+
+    <a href="https://dialnet.unirioja.es"
+       target="_blank">
+
+        Dialnet
+
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+    </a>
+
+
+</article>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                REFERENCIAS ESCRITAS
+=======================================================-->
+
+<section class="written-sources glass-card">
+
+
+    <h3>
+
+        <i class="fa-solid fa-pen"></i>
+
+        Referencias bibliográficas
+
+    </h3>
+
+
+
+    <ul>
+
+
+        <li>
+
+            Calderón de la Barca, Pedro.
+            <em>El gran teatro del mundo</em>.
+
+        </li>
+
+
+
+        <li>
+
+            Estudios sobre el teatro del Siglo de Oro español y el auto
+            sacramental.
+
+        </li>
+
+
+
+        <li>
+
+            Investigaciones históricas sobre el Barroco español y la
+            Contrarreforma.
+
+        </li>
+
+
+
+        <li>
+
+            Análisis críticos sobre la obra dramática de Calderón de la
+            Barca.
+
+        </li>
+
+
+    </ul>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+                NOTA FINAL
+=======================================================-->
+
+<section class="bibliography-note glass-card">
+
+
+    <i class="fa-solid fa-circle-info"></i>
+
+
+
+    <p>
+
+        Las fuentes fueron seleccionadas con finalidad educativa para
+        complementar el estudio de la obra y comprender su contexto
+        histórico, literario y cultural.
+
+    </p>
+
+
+</section>
+
+
+
+
+
+<!--======================================================
+        FIN PARTE 1.16
+
+        SIGUIENTE:
+        PARTE 1.17
+        FOOTER PROFESIONAL
+=======================================================-->
+
+</section>
+<!--======================================================
+                    FOOTER
+=======================================================-->
+
+<footer class="main-footer">
+
+
+    <div class="footer-container">
+
+
+
+
+
+        <!-- INFORMACIÓN DEL PROYECTO -->
+
+        <div class="footer-section">
+
+
+            <h3>
+
+                <i class="fa-solid fa-masks-theater"></i>
+
+                El gran teatro del mundo
+
+            </h3>
+
+
+
+            <p>
+
+                Proyecto educativo dedicado al estudio de la obra de
+                Pedro Calderón de la Barca y su importancia dentro del
+                Siglo de Oro español.
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <!-- CRÉDITOS -->
+
+        <div class="footer-section">
+
+
+            <h3>
+
+                Créditos
+
+            </h3>
+
+
+
+            <p>
+
+                Diseño web:
+                Proyecto literario educativo
+
+            </p>
+
+
+
+            <p>
+
+                Contenido basado en estudios históricos y literarios.
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <!-- RELOJ -->
+
+        <div class="footer-section">
+
+
+            <h3>
+
+                <i class="fa-solid fa-clock"></i>
+
+                Tiempo actual
+
+            </h3>
+
+
+
+            <div id="clock">
+
+                00:00:00
+
+            </div>
+
+
+
+            <div id="date">
+
+                Cargando fecha...
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+<!--======================================================
+                REDES SOCIALES
+=======================================================-->
+
+<div class="footer-social">
+
+
+    <a href="#"
+       aria-label="Facebook">
+
+        <i class="fa-brands fa-facebook"></i>
+
+    </a>
+
+
+
+
+    <a href="#"
+       aria-label="Instagram">
+
+        <i class="fa-brands fa-instagram"></i>
+
+    </a>
+
+
+
+
+    <a href="#"
+       aria-label="Twitter">
+
+        <i class="fa-brands fa-x-twitter"></i>
+
+    </a>
+
+
+
+
+    <a href="#"
+       aria-label="YouTube">
+
+        <i class="fa-brands fa-youtube"></i>
+
+    </a>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                BOTONES EXTRA
+=======================================================-->
+
+<div class="footer-buttons">
+
+
+    <button id="printPage">
+
+
+        <i class="fa-solid fa-print"></i>
+
+
+        Imprimir página
+
+
+    </button>
+
+
+
+
+
+    <button id="downloadPDF">
+
+
+        <i class="fa-solid fa-file-pdf"></i>
+
+
+        Descargar resumen
+
+
+    </button>
+
+
+
+</div>
+
+
+
+
+
+<!--======================================================
+                COPYRIGHT
+=======================================================-->
+
+<div class="footer-bottom">
+
+
+    <p>
+
+        © <span id="currentYear"></span>
+        
+        El gran teatro del mundo.
+        
+        Todos los derechos reservados.
+
+    </p>
+
+
+
+</div>
+
+
 
 </footer>
 
+
+
+
+
+<!--======================================================
+            BOTÓN VOLVER ARRIBA
+=======================================================-->
+
+<button id="backToTop"
+        title="Volver arriba">
+
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+
+</button>
+
+
+
+
+
+<!--======================================================
+            SCRIPTS
+=======================================================-->
+
+
+<script src="script.js"></script>
+
+
+
+
+
 </body>
+
 
 </html>

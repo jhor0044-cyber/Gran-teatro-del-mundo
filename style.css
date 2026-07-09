@@ -1,227 +1,4684 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/*======================================================
+            EL GRAN TEATRO DEL MUNDO
+            STYLE.CSS
+            PARTE 2.1
+
+            Variables generales,
+            fuentes,
+            reset y navegación
+=======================================================*/
+
+
+/*======================================================
+                    IMPORTAR FUENTES
+=======================================================*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+
+
+/*======================================================
+                    VARIABLES
+=======================================================*/
+
+
+:root{
+
+
+    /* Colores principales */
+
+    --gold:
+    #d4af37;
+
+
+    --dark-gold:
+    #8f6b18;
+
+
+    --wine:
+    #5b0f14;
+
+
+    --dark:
+    #090909;
+
+
+    --black:
+    #000000;
+
+
+    --cream:
+    #f5e6c8;
+
+
+    --white:
+    #ffffff;
+
+
+
+    /* Transparencias */
+
+    --glass:
+
+    rgba(255,255,255,0.10);
+
+
+
+    --glass-dark:
+
+    rgba(0,0,0,0.45);
+
+
+
+    /* Sombras */
+
+
+    --shadow:
+
+    0 10px 35px rgba(0,0,0,0.45);
+
+
+
+    --gold-shadow:
+
+    0 0 25px rgba(212,175,55,0.5);
+
+
+
+    /* Transiciones */
+
+
+    --transition:
+
+    all .4s ease;
+
+
+
 }
+
+
+
+
+
+/*======================================================
+                    RESET GENERAL
+=======================================================*/
+
+
+*{
+
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+
+}
+
+
+
+html{
+
+
+    scroll-behavior:smooth;
+
+
+}
+
+
 
 body{
 
-font-family:Poppins,sans-serif;
-background:#f4f4f4;
-color:#333;
+
+    min-height:100vh;
+
+
+    font-family:
+
+    'Poppins',
+    sans-serif;
+
+
+
+    color:var(--white);
+
+
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        rgba(0,0,0,.95),
+
+        rgba(91,15,20,.85)
+
+    ),
+
+    url("img/fondo-teatro.jpg");
+
+
+
+    background-size:cover;
+
+
+    background-attachment:fixed;
+
+
+    overflow-x:hidden;
+
 
 }
 
-header{
 
-height:100vh;
 
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url("img/teatro.jpg");
 
-background-size:cover;
-background-position:center;
 
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
+/*======================================================
+                CURSOR PERSONALIZADO
+=======================================================*/
 
-}
 
-.overlay{
+body{
 
-color:white;
-padding:20px;
+
+    cursor:
+
+    url("img/cursor.png"),
+    auto;
+
 
 }
 
-h1{
 
-font-size:65px;
-font-family:Cinzel,serif;
+
+
+
+/*======================================================
+                TITULOS GENERALES
+=======================================================*/
+
+
+h1,
+h2,
+h3{
+
+
+    font-family:
+
+    'Cinzel',
+    serif;
+
+
+
+    letter-spacing:
+
+    1px;
+
+
+
+}
+
+
+
+p{
+
+
+    line-height:
+
+    1.8;
+
+
+    color:
+
+    rgba(255,255,255,.85);
+
 
 }
 
-header p{
 
-font-size:22px;
-margin:20px;
 
-}
 
-.boton{
 
-display:inline-block;
-padding:15px 35px;
-background:#c89b3c;
-color:white;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
-transition:.4s;
+a{
+
+
+    text-decoration:none;
+
+
+    color:inherit;
+
 
 }
 
-.boton:hover{
 
-background:#a77c22;
+
+
+
+img{
+
+
+    max-width:100%;
+
+
+    display:block;
+
 
 }
+
+
+
+
+
+/*======================================================
+                CONTENEDOR GENERAL
+=======================================================*/
+
 
 section{
 
-padding:70px 10%;
+
+    width:100%;
+
+
+    padding:
+
+    90px 8%;
+
 
 }
 
-.intro,
-.autor{
 
-display:flex;
-gap:40px;
-align-items:center;
-flex-wrap:wrap;
 
-}
 
-.intro img,
-.autor img{
 
-width:420px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
+/*======================================================
+                EFECTO GLASS
+=======================================================*/
 
-}
 
-h2{
+.glass-card{
 
-font-size:36px;
-margin-bottom:20px;
-color:#8b0000;
-font-family:Cinzel,serif;
 
-}
+    background:
 
-.cards{
+    var(--glass);
 
-text-align:center;
 
-}
 
-.contenedor-cards{
+    backdrop-filter:
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
+    blur(15px);
 
-}
 
-.card{
 
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,.15);
-transition:.3s;
+    -webkit-backdrop-filter:
+
+    blur(15px);
+
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+
+    border-radius:
+
+    20px;
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
 
 }
 
-.card:hover{
 
-transform:translateY(-10px);
+
+
+
+/*======================================================
+                BARRA DE NAVEGACIÓN
+=======================================================*/
+
+
+.navbar{
+
+
+    position:
+
+    fixed;
+
+
+
+    top:
+
+    0;
+
+
+
+    left:
+
+    0;
+
+
+
+    width:
+
+    100%;
+
+
+
+    z-index:
+
+    1000;
+
+
+
+    display:
+
+    flex;
+
+
+
+    justify-content:
+
+    space-between;
+
+
+
+    align-items:
+
+    center;
+
+
+
+    padding:
+
+    20px 8%;
+
+
+
+    background:
+
+    rgba(0,0,0,.55);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    border-bottom:
+
+    1px solid rgba(212,175,55,.3);
+
+
 
 }
 
-.imagen{
 
-text-align:center;
 
-}
 
-.imagen img{
 
-width:90%;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.25);
+/* LOGO */
 
-}
 
-.mensaje{
+.logo{
 
-background:#8b0000;
-color:white;
-text-align:center;
 
-}
+    font-family:
 
-.mensaje h2{
+    'Cinzel',
+    serif;
 
-color:white;
 
-}
 
-.galeria{
+    font-size:
 
-text-align:center;
+    1.4rem;
 
-}
 
-.imagenes{
 
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
+    font-weight:
 
-}
+    700;
 
-.imagenes img{
 
-width:320px;
-border-radius:12px;
-transition:.4s;
-box-shadow:0 8px 20px rgba(0,0,0,.2);
 
-}
+    color:
 
-.imagenes img:hover{
+    var(--gold);
 
-transform:scale(1.05);
+
+
+    display:
+
+    flex;
+
+
+
+    gap:
+
+    10px;
+
+
+
+    align-items:center;
+
 
 }
 
-footer{
 
-background:#222;
-color:white;
-text-align:center;
-padding:25px;
+
+
+
+/* MENÚ */
+
+
+.nav-links{
+
+
+    display:
+
+    flex;
+
+
+
+    gap:
+
+    30px;
+
+
+
+    list-style:none;
+
 
 }
+
+
+
+
+
+.nav-links a{
+
+
+    position:
+
+    relative;
+
+
+
+    font-size:
+
+    .95rem;
+
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+
+.nav-links a:hover{
+
+
+    color:
+
+    var(--gold);
+
+
+}
+
+
+
+
+
+.nav-links a::after{
+
+
+    content:"";
+
+
+
+    position:
+
+    absolute;
+
+
+
+    width:
+
+    0;
+
+
+
+    height:
+
+    2px;
+
+
+
+    background:
+
+    var(--gold);
+
+
+
+    bottom:
+
+    -8px;
+
+
+
+    left:
+
+    0;
+
+
+
+    transition:
+
+    .3s;
+
+
+}
+
+
+
+
+
+.nav-links a:hover::after{
+
+
+    width:
+
+    100%;
+
+
+}
+
+
+
+
+
+/*======================================================
+                BOTÓN MENÚ MÓVIL
+=======================================================*/
+
+
+.menu-toggle{
+
+
+    display:none;
+
+
+
+    font-size:
+
+    1.8rem;
+
+
+
+    color:
+
+    var(--gold);
+
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+/*======================================================
+                ANIMACIÓN GENERAL
+=======================================================*/
+
+
+@keyframes fadeUp{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(40px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+/*======================================================
+                FIN PARTE 2.1
+
+        SIGUIENTE:
+        HERO SECTION Y BOTONES
+=======================================================*/
+/*======================================================
+                PARTE 2.2
+                HERO SECTION
+=======================================================*/
+
+
+
+.hero{
+
+
+    min-height:
+
+    100vh;
+
+
+
+    display:
+
+    flex;
+
+
+
+    justify-content:
+
+    center;
+
+
+
+    align-items:
+
+    center;
+
+
+
+    text-align:
+
+    center;
+
+
+
+    position:
+
+    relative;
+
+
+
+    overflow:
+
+    hidden;
+
+
+
+    background:
+
+
+
+    linear-gradient(
+
+        rgba(0,0,0,.75),
+
+        rgba(0,0,0,.85)
+
+    ),
+
+    url("img/hero/teatro-barroco.jpg");
+
+
+
+    background-size:
+
+    cover;
+
+
+
+    background-position:
+
+    center;
+
+
+
+}
+
+
+
+
+
+/* CAPA DE LUZ */
+
+
+.hero::before{
+
+
+    content:"";
+
+
+
+    position:
+
+    absolute;
+
+
+
+    inset:
+
+    0;
+
+
+
+    background:
+
+
+
+    radial-gradient(
+
+        circle,
+
+        rgba(212,175,55,.25),
+
+        transparent 60%
+
+    );
+
+
+
+    animation:
+
+    pulseLight 5s infinite;
+
+
+}
+
+
+
+
+
+@keyframes pulseLight{
+
+
+    0%,100%{
+
+
+        opacity:.5;
+
+
+    }
+
+
+    50%{
+
+
+        opacity:1;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+/* CONTENIDO */
+
+
+.hero-content{
+
+
+    position:
+
+    relative;
+
+
+
+    z-index:
+
+    2;
+
+
+
+    max-width:
+
+    1000px;
+
+
+
+    animation:
+
+    fadeUp 1.5s ease;
+
+
+}
+
+
+
+
+
+
+/* TITULO PRINCIPAL */
+
+
+.hero h1{
+
+
+    font-size:
+
+    clamp(
+
+        3rem,
+
+        8vw,
+
+        6rem
+
+    );
+
+
+
+    text-transform:
+
+    uppercase;
+
+
+
+    color:
+
+    var(--gold);
+
+
+
+    text-shadow:
+
+
+
+    0 0 10px rgba(212,175,55,.5),
+
+    0 0 30px rgba(212,175,55,.3);
+
+
+
+    margin-bottom:
+
+    25px;
+
+
+}
+
+
+
+
+
+/* SUBTITULO */
+
+
+.hero h2{
+
+
+    font-size:
+
+    clamp(
+
+        1.2rem,
+
+        3vw,
+
+        2rem
+
+    );
+
+
+
+    font-family:
+
+    'Poppins',
+    sans-serif;
+
+
+
+    font-weight:
+
+    300;
+
+
+
+    color:
+
+    var(--cream);
+
+
+
+    margin-bottom:
+
+    20px;
+
+
+}
+
+
+
+
+
+/* AUTOR */
+
+
+.hero-author{
+
+
+    font-size:
+
+    1.4rem;
+
+
+
+    color:
+
+    white;
+
+
+
+    margin-bottom:
+
+    40px;
+
+
+
+    font-style:
+
+    italic;
+
+
+}
+
+
+
+
+
+
+/* BOTÓN EXPLORAR */
+
+
+.hero-btn{
+
+
+    display:
+
+    inline-flex;
+
+
+
+    align-items:
+
+    center;
+
+
+
+    gap:
+
+    12px;
+
+
+
+    padding:
+
+    16px 40px;
+
+
+
+    border-radius:
+
+    50px;
+
+
+
+    background:
+
+
+
+    linear-gradient(
+
+        45deg,
+
+        var(--dark-gold),
+
+        var(--gold)
+
+    );
+
+
+
+    color:
+
+    var(--black);
+
+
+
+    font-weight:
+
+    700;
+
+
+
+    transition:
+
+    var(--transition);
+
+
+
+    box-shadow:
+
+    var(--gold-shadow);
+
+
+
+}
+
+
+
+
+
+
+.hero-btn:hover{
+
+
+    transform:
+
+    translateY(-8px);
+
+
+
+    box-shadow:
+
+    0 0 40px rgba(212,175,55,.8);
+
+
+
+}
+
+
+
+
+
+/* ICONO DEL BOTÓN */
+
+
+.hero-btn i{
+
+
+    font-size:
+
+    1.2rem;
+
+
+}
+
+
+
+
+
+/* DECORACIÓN INFERIOR */
+
+
+.hero-decoration{
+
+
+    position:
+
+    absolute;
+
+
+
+    bottom:
+
+    0;
+
+
+
+    left:
+
+    0;
+
+
+
+    width:
+
+    100%;
+
+
+
+    height:
+
+    100px;
+
+
+
+    background:
+
+
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(0,0,0,.8)
+
+    );
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+                PARTE 2.2 RESPONSIVE
+=======================================================*/
+
+
+@media(max-width:768px){
+
+
+
+.hero h1{
+
+
+    font-size:
+
+    3rem;
+
+
+}
+
+
+
+.hero h2{
+
+
+    font-size:
+
+    1.2rem;
+
+
+}
+
+
+
+.hero-author{
+
+
+    font-size:
+
+    1rem;
+
+
+}
+
+
+
+.hero-btn{
+
+
+    padding:
+
+    14px 30px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+/*======================================================
+                FIN PARTE 2.2
+
+        SIGUIENTE:
+        TARJETAS, TÍTULOS Y SECCIONES
+=======================================================*/
+/*======================================================
+                PARTE 2.3
+        SECCIONES Y TARJETAS GENERALES
+=======================================================*/
+
+
+
+
+
+/*======================================================
+                TITULOS DE SECCIÓN
+=======================================================*/
+
+
+.section-title{
+
+
+    text-align:
+
+    center;
+
+
+
+    margin-bottom:
+
+    60px;
+
+
+
+    animation:
+
+    fadeUp 1s ease;
+
+
+}
+
+
+
+
+
+.section-subtitle{
+
+
+    display:
+
+    inline-flex;
+
+
+
+    align-items:
+
+    center;
+
+
+
+    gap:
+
+    10px;
+
+
+
+    color:
+
+    var(--gold);
+
+
+
+    font-size:
+
+    1rem;
+
+
+
+    text-transform:
+
+    uppercase;
+
+
+
+    letter-spacing:
+
+    3px;
+
+
+
+    margin-bottom:
+
+    15px;
+
+
+}
+
+
+
+
+
+.section-subtitle i{
+
+
+    font-size:
+
+    1.2rem;
+
+
+}
+
+
+
+
+
+.section-title h2{
+
+
+    font-size:
+
+
+    clamp(
+
+        2rem,
+
+        5vw,
+
+        3.5rem
+
+    );
+
+
+
+    color:
+
+    var(--cream);
+
+
+
+    margin-bottom:
+
+    20px;
+
+
+
+}
+
+
+
+.section-title h2 em{
+
+
+    color:
+
+    var(--gold);
+
+
+
+}
+
+
+
+
+
+.section-title p{
+
+
+    max-width:
+
+    800px;
+
+
+
+    margin:
+
+    auto;
+
+
+
+    font-size:
+
+    1.1rem;
+
+
+}
+
+
+
+
+
+
+/* BARRA DECORATIVA */
+
+
+.section-title::after{
+
+
+    content:"";
+
+
+
+    display:
+
+    block;
+
+
+
+    width:
+
+    120px;
+
+
+
+    height:
+
+    3px;
+
+
+
+    background:
+
+
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        var(--gold),
+
+        transparent
+
+    );
+
+
+
+    margin:
+
+    30px auto;
+
+
+}
+
+
+
+
+
+
+/*======================================================
+                GRID DE TARJETAS
+=======================================================*/
+
+
+.cards-grid,
+.values-grid,
+.characters-grid,
+.curiosities-grid,
+.quotes-grid,
+.data-cards,
+.conclusion-grid,
+.video-cards,
+.bibliography-grid{
+
+
+    display:
+
+    grid;
+
+
+
+    grid-template-columns:
+
+    repeat(
+
+        auto-fit,
+
+        minmax(260px,1fr)
+
+    );
+
+
+
+    gap:
+
+    30px;
+
+
+}
+
+
+
+
+
+
+/*======================================================
+                TARJETAS GENERALES
+=======================================================*/
+
+
+.card,
+.character-card,
+.value-card,
+.curiosity-card,
+.quote-card,
+.data-card,
+.conclusion-card,
+.source-card,
+.mini-info-card{
+
+
+    padding:
+
+    30px;
+
+
+
+    position:
+
+    relative;
+
+
+
+    overflow:
+
+    hidden;
+
+
+
+    transition:
+
+    var(--transition);
+
+
+
+}
+
+
+
+
+
+
+
+/* EFECTO SUPERIOR DORADO */
+
+
+.card::before,
+.character-card::before,
+.value-card::before,
+.curiosity-card::before,
+.quote-card::before,
+.data-card::before,
+.conclusion-card::before,
+.source-card::before,
+.mini-info-card::before{
+
+
+    content:"";
+
+
+
+    position:
+
+    absolute;
+
+
+
+    top:
+
+    0;
+
+
+
+    left:
+
+    -100%;
+
+
+
+    width:
+
+    100%;
+
+
+
+    height:
+
+    3px;
+
+
+
+    background:
+
+    var(--gold);
+
+
+
+    transition:
+
+    .5s;
+
+
+}
+
+
+
+
+
+
+.card:hover::before,
+.character-card:hover::before,
+.value-card:hover::before,
+.curiosity-card:hover::before,
+.quote-card:hover::before,
+.data-card:hover::before,
+.conclusion-card:hover::before,
+.source-card:hover::before,
+.mini-info-card:hover::before{
+
+
+    left:
+
+    0;
+
+
+}
+
+
+
+
+
+/* HOVER GENERAL */
+
+
+.card:hover,
+.character-card:hover,
+.value-card:hover,
+.curiosity-card:hover,
+.quote-card:hover,
+.data-card:hover,
+.conclusion-card:hover,
+.source-card:hover,
+.mini-info-card:hover{
+
+
+    transform:
+
+    translateY(-12px);
+
+
+
+    box-shadow:
+
+    0 20px 45px rgba(0,0,0,.55);
+
+
+
+    border-color:
+
+    rgba(212,175,55,.5);
+
+
+}
+
+
+
+
+
+
+
+/* ICONOS */
+
+
+.card i,
+.character-card i,
+.value-card i,
+.curiosity-card i,
+.quote-card i,
+.data-card i,
+.conclusion-card i,
+.source-card i,
+.mini-info-card i{
+
+
+    font-size:
+
+    2.5rem;
+
+
+
+    color:
+
+    var(--gold);
+
+
+
+    margin-bottom:
+
+    20px;
+
+
+
+}
+
+
+
+
+
+
+/* TITULOS DE TARJETAS */
+
+
+.card h3,
+.character-card h3,
+.value-card h3,
+.curiosity-card h3,
+.quote-card h3,
+.data-card h3,
+.conclusion-card h3,
+.source-card h3,
+.mini-info-card h3{
+
+
+    color:
+
+    var(--cream);
+
+
+
+    margin-bottom:
+
+    15px;
+
+
+
+    font-size:
+
+    1.3rem;
+
+
+}
+
+
+
+
+
+
+/* TEXTOS */
+
+
+.card p,
+.character-card p,
+.value-card p,
+.curiosity-card p,
+.quote-card p,
+.data-card p,
+.conclusion-card p,
+.source-card p,
+.mini-info-card p{
+
+
+    color:
+
+    rgba(255,255,255,.8);
+
+
+
+}
+
+
+
+
+
+
+/*======================================================
+                IMÁGENES EN TARJETAS
+=======================================================*/
+
+
+.card img,
+.character-card img,
+.value-card img{
+
+
+    width:
+
+    100%;
+
+
+
+    height:
+
+    250px;
+
+
+
+    object-fit:
+
+    cover;
+
+
+
+    border-radius:
+
+    15px;
+
+
+
+    margin-bottom:
+
+    20px;
+
+
+
+    transition:
+
+    .5s;
+
+
+}
+
+
+
+
+
+.card:hover img,
+.character-card:hover img,
+.value-card:hover img{
+
+
+    transform:
+
+    scale(1.08);
+
+
+}
+
+
+
+
+
+
+/*======================================================
+                RESPONSIVE
+=======================================================*/
+
+
+@media(max-width:768px){
+
+
+section{
+
+
+    padding:
+
+    70px 5%;
+
+
+}
+
+
+
+.section-title h2{
+
+
+    font-size:
+
+    2rem;
+
+
+}
+
+
+
+.card,
+.character-card,
+.value-card,
+.curiosity-card,
+.quote-card{
+
+
+    padding:
+
+    20px;
+
+
+}
+
+
+}
+
+
+
+
+
+/*======================================================
+                FIN PARTE 2.3
+
+        SIGUIENTE:
+        PERSONAJES Y GALERÍA
+=======================================================*/
+/*======================================================
+                PARTE 2.4
+        PERSONAJES Y GALERÍA
+=======================================================*/
+
+
+
+
+
+/*======================================================
+                TARJETAS DE PERSONAJES
+=======================================================*/
+
+
+.character-card{
+
+
+    text-align:
+
+    center;
+
+
+
+    overflow:
+
+    hidden;
+
+
+
+}
+
+
+
+
+
+/* IMAGEN DEL PERSONAJE */
+
+
+.character-card img{
+
+
+    width:
+
+    180px;
+
+
+
+    height:
+
+    180px;
+
+
+
+    object-fit:
+
+    cover;
+
+
+
+    border-radius:
+
+    50%;
+
+
+
+    margin:
+
+    0 auto 25px;
+
+
+
+    border:
+
+    4px solid var(--gold);
+
+
+
+    box-shadow:
+
+    var(--gold-shadow);
+
+
+
+    transition:
+
+    .5s;
+
+
+}
+
+
+
+
+
+.character-card:hover img{
+
+
+    transform:
+
+    rotateY(180deg);
+
+
+
+}
+
+
+
+
+
+
+/* NOMBRE DEL PERSONAJE */
+
+
+.character-card h3{
+
+
+    color:
+
+    var(--gold);
+
+
+
+}
+
+
+
+
+
+/* DESCRIPCIÓN */
+
+
+.character-card p{
+
+
+    font-size:
+
+    .95rem;
+
+
+
+}
+
+
+
+
+
+/*======================================================
+                GALERÍA
+=======================================================*/
+
+
+.gallery-grid{
+
+
+    display:
+
+    grid;
+
+
+
+    grid-template-columns:
+
+    repeat(
+
+        auto-fit,
+
+        minmax(260px,1fr)
+
+    );
+
+
+
+    gap:
+
+    25px;
+
+
+}
+
+
+
+
+
+
+
+.gallery-item{
+
+
+    position:
+
+    relative;
+
+
+
+    overflow:
+
+    hidden;
+
+
+
+    border-radius:
+
+    20px;
+
+
+
+    cursor:
+
+    pointer;
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+}
+
+
+
+
+
+.gallery-item img{
+
+
+    width:
+
+    100%;
+
+
+
+    height:
+
+    280px;
+
+
+
+    object-fit:
+
+    cover;
+
+
+
+    transition:
+
+    .6s;
+
+
+}
+
+
+
+
+
+.gallery-item:hover img{
+
+
+    transform:
+
+    scale(1.15);
+
+
+}
+
+
+
+
+
+
+
+/* CAPTION DE IMAGEN */
+
+
+.gallery-item figcaption{
+
+
+    position:
+
+    absolute;
+
+
+
+    bottom:
+
+    0;
+
+
+
+    left:
+
+    0;
+
+
+
+    width:
+
+    100%;
+
+
+
+    padding:
+
+    20px;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(0,0,0,.85)
+
+    );
+
+
+
+    color:
+
+    white;
+
+
+
+    font-family:
+
+    'Cinzel',
+    serif;
+
+
+
+    transform:
+
+    translateY(100%);
+
+
+
+    transition:
+
+    .4s;
+
+
+
+}
+
+
+
+
+
+
+.gallery-item:hover figcaption{
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+
+
+
+
+/* BORDE DORADO AL PASAR */
+
+
+.gallery-item::after{
+
+
+    content:"";
+
+
+
+    position:
+
+    absolute;
+
+
+
+    inset:
+
+    0;
+
+
+
+    border:
+
+    2px solid transparent;
+
+
+
+    border-radius:
+
+    20px;
+
+
+
+    transition:
+
+    .4s;
+
+
+}
+
+
+
+
+
+
+.gallery-item:hover::after{
+
+
+    border-color:
+
+    var(--gold);
+
+
+
+    box-shadow:
+
+    inset 0 0 30px rgba(212,175,55,.5);
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+            IMAGEN DESTACADA GALERÍA
+=======================================================*/
+
+
+.gallery-highlight{
+
+
+    margin-top:
+
+    50px;
+
+
+
+    padding:
+
+    40px;
+
+
+
+    text-align:
+
+    center;
+
+
+}
+
+
+
+.gallery-highlight i{
+
+
+    font-size:
+
+    3rem;
+
+
+
+    color:
+
+    var(--gold);
+
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+                VIDEO
+=======================================================*/
+
+
+.video-container{
+
+
+    padding:
+
+    35px;
+
+
+
+    display:
+
+    grid;
+
+
+
+    grid-template-columns:
+
+    1.2fr 1fr;
+
+
+
+    gap:
+
+    40px;
+
+
+
+    align-items:
+
+    center;
+
+
+}
+
+
+
+
+
+.youtube-box{
+
+
+    position:
+
+    relative;
+
+
+
+    width:
+
+    100%;
+
+
+
+    aspect-ratio:
+
+    16/9;
+
+
+
+}
+
+
+
+
+
+.youtube-box iframe{
+
+
+    width:
+
+    100%;
+
+
+
+    height:
+
+    100%;
+
+
+
+    border:
+
+    none;
+
+
+
+    border-radius:
+
+    20px;
+
+
+}
+
+
+
+
+
+
+
+.video-info i{
+
+
+    color:
+
+    var(--gold);
+
+
+
+    font-size:
+
+    3rem;
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+                RESPONSIVE
+=======================================================*/
+
 
 @media(max-width:900px){
 
-h1{
 
-font-size:45px;
+
+.video-container{
+
+
+    grid-template-columns:
+
+    1fr;
+
+
+}
+
+
+
+
+.gallery-item img{
+
+
+    height:
+
+    220px;
+
 
 }
 
-.intro,
-.autor{
 
-flex-direction:column;
+
+.character-card img{
+
+
+    width:
+
+    150px;
+
+
+
+    height:
+
+    150px;
+
 
 }
 
-.intro img,
-.autor img{
-
-width:100%;
 
 }
+
+
+
+
+
+
+/*======================================================
+                FIN PARTE 2.4
+
+        SIGUIENTE:
+        TIMELINE Y TABLAS
+=======================================================*/
+/*======================================================
+                PARTE 2.5
+        TIMELINE, TABLA Y BIBLIOGRAFÍA
+=======================================================*/
+
+
+
+
+
+/*======================================================
+                LÍNEA DEL TIEMPO
+=======================================================*/
+
+
+.modern-timeline{
+
+
+    position:
+
+    relative;
+
+
+
+    max-width:
+
+    1100px;
+
+
+
+    margin:
+
+    auto;
+
+
+
+}
+
+
+
+
+
+/* LÍNEA CENTRAL */
+
+
+.modern-timeline::before{
+
+
+    content:"";
+
+
+
+    position:
+
+    absolute;
+
+
+
+    left:
+
+    50%;
+
+
+
+    top:
+
+    0;
+
+
+
+    width:
+
+    4px;
+
+
+
+    height:
+
+    100%;
+
+
+
+    background:
+
+    linear-gradient(
+
+        var(--gold),
+
+        transparent
+
+    );
+
+
+
+    transform:
+
+    translateX(-50%);
+
+
+
+}
+
+
+
+
+
+/* TARJETAS TIMELINE */
+
+
+.timeline-card{
+
+
+    width:
+
+    45%;
+
+
+
+    padding:
+
+    30px;
+
+
+
+    margin-bottom:
+
+    50px;
+
+
+
+    position:
+
+    relative;
+
+
+}
+
+
+
+
+
+/* ALTERNAR LADOS */
+
+
+.timeline-card:nth-child(odd){
+
+
+    margin-right:
+
+    auto;
+
+
+}
+
+
+
+
+.timeline-card:nth-child(even){
+
+
+    margin-left:
+
+    auto;
+
+
+}
+
+
+
+
+
+
+
+/* CÍRCULO DE FECHA */
+
+
+.timeline-year{
+
+
+    position:
+
+    absolute;
+
+
+
+    top:
+
+    25px;
+
+
+
+    width:
+
+    90px;
+
+
+
+    height:
+
+    90px;
+
+
+
+    border-radius:
+
+    50%;
+
+
+
+    background:
+
+    var(--gold);
+
+
+
+    color:
+
+    var(--black);
+
+
+
+    display:
+
+    flex;
+
+
+
+    align-items:
+
+    center;
+
+
+
+    justify-content:
+
+    center;
+
+
+
+    font-weight:
+
+    700;
+
+
+
+    font-family:
+
+    'Cinzel',
+    serif;
+
+
+
+    box-shadow:
+
+    var(--gold-shadow);
+
+
+}
+
+
+
+
+
+.timeline-card:nth-child(odd)
+.timeline-year{
+
+
+    right:
+
+    -110px;
+
+
+}
+
+
+
+
+
+.timeline-card:nth-child(even)
+.timeline-year{
+
+
+    left:
+
+    -110px;
+
+
+}
+
+
+
+
+
+
+.timeline-image img{
+
+
+    width:
+
+    100%;
+
+
+
+    height:
+
+    220px;
+
+
+
+    object-fit:
+
+    cover;
+
+
+
+    border-radius:
+
+    15px;
+
+
+
+    margin-bottom:
+
+    20px;
+
+
+}
+
+
+
+
+
+
+.timeline-info h3{
+
+
+    color:
+
+    var(--gold);
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+                CONTADORES
+=======================================================*/
+
+
+.history-counter{
+
+
+    margin-top:
+
+    60px;
+
+
+
+    padding:
+
+    40px;
+
+
+
+    text-align:
+
+    center;
+
+
+}
+
+
+
+
+
+.counter-grid{
+
+
+    display:
+
+    grid;
+
+
+
+    grid-template-columns:
+
+    repeat(
+
+        3,
+
+        1fr
+
+    );
+
+
+
+    gap:
+
+    30px;
+
+
+
+    margin-top:
+
+    30px;
+
+
+}
+
+
+
+
+
+
+.counter-item span{
+
+
+    display:
+
+    block;
+
+
+
+    font-size:
+
+    3rem;
+
+
+
+    font-family:
+
+    'Cinzel',
+    serif;
+
+
+
+    color:
+
+    var(--gold);
+
+
+}
+
+
+
+
+
+
+/*======================================================
+                TABLA
+=======================================================*/
+
+
+.table-container{
+
+
+    padding:
+
+    30px;
+
+
+
+    overflow-x:
+
+    auto;
+
+
+}
+
+
+
+
+
+
+
+.literary-table{
+
+
+    width:
+
+    100%;
+
+
+
+    border-collapse:
+
+    collapse;
+
+
+
+    min-width:
+
+    600px;
+
+
+}
+
+
+
+
+
+
+.literary-table th{
+
+
+    background:
+
+    rgba(212,175,55,.25);
+
+
+
+    color:
+
+    var(--gold);
+
+
+
+    padding:
+
+    20px;
+
+
+
+    font-family:
+
+    'Cinzel',
+    serif;
+
+
+
+}
+
+
+
+
+
+
+
+.literary-table td{
+
+
+    padding:
+
+    18px;
+
+
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.15);
+
+
+
+    color:
+
+    white;
+
+
+}
+
+
+
+
+
+
+.literary-table tr{
+
+
+    transition:
+
+    .3s;
+
+
+}
+
+
+
+
+
+
+.literary-table tbody tr:hover{
+
+
+    background:
+
+    rgba(212,175,55,.15);
+
+
+
+    transform:
+
+    scale(1.01);
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+                BIBLIOGRAFÍA
+=======================================================*/
+
+
+.bibliography-cover{
+
+
+    max-width:
+
+    900px;
+
+
+
+    margin:
+
+    auto;
+
+
+
+    margin-bottom:
+
+    50px;
+
+
+}
+
+
+
+
+
+.bibliography-cover img{
+
+
+    width:
+
+    100%;
+
+
+
+    height:
+
+    350px;
+
+
+
+    object-fit:
+
+    cover;
+
+
+
+    border-radius:
+
+    25px;
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+}
+
+
+
+
+
+
+.source-card{
+
+
+    text-align:
+
+    center;
+
+
+}
+
+
+
+
+
+
+.source-card a{
+
+
+    display:
+
+    inline-flex;
+
+
+
+    align-items:
+
+    center;
+
+
+
+    gap:
+
+    8px;
+
+
+
+    margin-top:
+
+    20px;
+
+
+
+    padding:
+
+    12px 25px;
+
+
+
+    border-radius:
+
+    30px;
+
+
+
+    background:
+
+    var(--gold);
+
+
+
+    color:
+
+    var(--black);
+
+
+
+    font-weight:
+
+    700;
+
+
+
+    transition:
+
+    .3s;
+
+
+}
+
+
+
+
+
+
+.source-card a:hover{
+
+
+    transform:
+
+    translateY(-5px);
+
+
+
+    box-shadow:
+
+    var(--gold-shadow);
+
+
+}
+
+
+
+
+
+
+.written-sources{
+
+
+    margin-top:
+
+    40px;
+
+
+
+    padding:
+
+    35px;
+
+
+}
+
+
+
+
+
+.written-sources li{
+
+
+    margin:
+
+    15px;
+
+
+
+    color:
+
+    rgba(255,255,255,.85);
+
+
+}
+
+
+
+
+
+
+/*======================================================
+                RESPONSIVE
+=======================================================*/
+
+
+@media(max-width:900px){
+
+
+
+.modern-timeline::before{
+
+
+    left:
+
+    20px;
+
+
+}
+
+
+
+.timeline-card{
+
+
+    width:
+
+    100%;
+
+
+
+    margin-left:
+
+    0!important;
+
+
+
+    padding-left:
+
+    70px;
+
+
+}
+
+
+
+
+.timeline-card .timeline-year{
+
+
+    left:
+
+    -25px;
+
+
+
+    right:
+
+    auto;
+
+
+}
+
+
+
+
+
+.counter-grid{
+
+
+    grid-template-columns:
+
+    1fr;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+/*======================================================
+                FIN PARTE 2.5
+
+        SIGUIENTE:
+        FOOTER, BOTONES Y EFECTOS FINALES
+=======================================================*/
+/*======================================================
+                PARTE 2.6
+        FOOTER, BOTONES Y EFECTOS FINALES
+=======================================================*/
+
+
+
+
+
+/*======================================================
+                    FOOTER
+=======================================================*/
+
+
+.main-footer{
+
+
+    background:
+
+    rgba(0,0,0,.75);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+    border-top:
+
+    1px solid rgba(212,175,55,.3);
+
+
+
+    padding:
+
+    70px 8% 20px;
+
+
+
+}
+
+
+
+
+
+.footer-container{
+
+
+    display:
+
+    grid;
+
+
+
+    grid-template-columns:
+
+    repeat(
+
+        auto-fit,
+
+        minmax(250px,1fr)
+
+    );
+
+
+
+    gap:
+
+    40px;
+
+
+}
+
+
+
+
+
+.footer-section h3{
+
+
+    color:
+
+    var(--gold);
+
+
+
+    margin-bottom:
+
+    20px;
+
+
+}
+
+
+
+
+
+.footer-section i{
+
+
+    color:
+
+    var(--gold);
+
+
+}
+
+
+
+
+
+.footer-section p{
+
+
+    font-size:
+
+    .95rem;
+
+
+
+}
+
+
+
+
+
+
+/* REDES SOCIALES */
+
+
+.footer-social{
+
+
+    display:
+
+    flex;
+
+
+
+    justify-content:
+
+    center;
+
+
+
+    gap:
+
+    25px;
+
+
+
+    margin:
+
+    40px 0;
+
+
+}
+
+
+
+
+
+.footer-social a{
+
+
+    width:
+
+    50px;
+
+
+
+    height:
+
+    50px;
+
+
+
+    border-radius:
+
+    50%;
+
+
+
+    display:
+
+    flex;
+
+
+
+    align-items:
+
+    center;
+
+
+
+    justify-content:
+
+    center;
+
+
+
+    background:
+
+    rgba(212,175,55,.15);
+
+
+
+    color:
+
+    var(--gold);
+
+
+
+    font-size:
+
+    1.4rem;
+
+
+
+    transition:
+
+    .4s;
+
+
+}
+
+
+
+
+
+
+.footer-social a:hover{
+
+
+    background:
+
+    var(--gold);
+
+
+
+    color:
+
+    var(--black);
+
+
+
+    transform:
+
+    translateY(-8px);
+
+
+}
+
+
+
+
+
+
+/* BOTONES FOOTER */
+
+
+.footer-buttons{
+
+
+    display:
+
+    flex;
+
+
+
+    justify-content:
+
+    center;
+
+
+
+    gap:
+
+    20px;
+
+
+
+    flex-wrap:
+
+    wrap;
+
+
+}
+
+
+
+
+
+.footer-buttons button{
+
+
+    padding:
+
+    14px 25px;
+
+
+
+    border:none;
+
+
+
+    border-radius:
+
+    30px;
+
+
+
+    background:
+
+    var(--gold);
+
+
+
+    color:
+
+    var(--black);
+
+
+
+    font-weight:
+
+    700;
+
+
+
+    cursor:
+
+    pointer;
+
+
+
+    transition:
+
+    .3s;
+
+
+}
+
+
+
+
+
+
+.footer-buttons button:hover{
+
+
+    transform:
+
+    scale(1.08);
+
+
+
+    box-shadow:
+
+    var(--gold-shadow);
+
+
+}
+
+
+
+
+
+
+.footer-bottom{
+
+
+    margin-top:
+
+    40px;
+
+
+
+    padding-top:
+
+    20px;
+
+
+
+    text-align:
+
+    center;
+
+
+
+    border-top:
+
+    1px solid rgba(255,255,255,.15);
+
+
+}
+
+
+
+
+
+
+/*======================================================
+            BOTÓN VOLVER ARRIBA
+=======================================================*/
+
+
+#backToTop{
+
+
+    position:
+
+    fixed;
+
+
+
+    bottom:
+
+    30px;
+
+
+
+    right:
+
+    30px;
+
+
+
+    width:
+
+    55px;
+
+
+
+    height:
+
+    55px;
+
+
+
+    border-radius:
+
+    50%;
+
+
+
+    border:none;
+
+
+
+    background:
+
+    var(--gold);
+
+
+
+    color:
+
+    var(--black);
+
+
+
+    font-size:
+
+    1.4rem;
+
+
+
+    cursor:
+
+    pointer;
+
+
+
+    opacity:
+
+    0;
+
+
+
+    visibility:
+
+    hidden;
+
+
+
+    transition:
+
+    .4s;
+
+
+
+    z-index:
+
+    999;
+
+
+}
+
+
+
+
+
+
+#backToTop.show{
+
+
+    opacity:
+
+    1;
+
+
+
+    visibility:
+
+    visible;
+
+
+}
+
+
+
+
+
+#backToTop:hover{
+
+
+    transform:
+
+    translateY(-8px);
+
+
+
+    box-shadow:
+
+    var(--gold-shadow);
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+                LOADER
+=======================================================*/
+
+
+.loader{
+
+
+    position:
+
+    fixed;
+
+
+
+    inset:
+
+    0;
+
+
+
+    background:
+
+    var(--black);
+
+
+
+    display:
+
+    flex;
+
+
+
+    justify-content:
+
+    center;
+
+
+
+    align-items:
+
+    center;
+
+
+
+    z-index:
+
+    2000;
+
+
+}
+
+
+
+
+
+.loader i{
+
+
+    font-size:
+
+    4rem;
+
+
+
+    color:
+
+    var(--gold);
+
+
+
+    animation:
+
+    rotateLoader 2s infinite;
+
+
+}
+
+
+
+
+
+
+@keyframes rotateLoader{
+
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+            BARRA DE PROGRESO SCROLL
+=======================================================*/
+
+
+.scroll-progress{
+
+
+    position:
+
+    fixed;
+
+
+
+    top:
+
+    0;
+
+
+
+    left:
+
+    0;
+
+
+
+    height:
+
+    5px;
+
+
+
+    width:
+
+    0;
+
+
+
+    background:
+
+    var(--gold);
+
+
+
+    z-index:
+
+    3000;
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+                MODO CLARO
+=======================================================*/
+
+
+.light-mode{
+
+
+    --dark:
+
+    #ffffff;
+
+
+
+    --black:
+
+    #ffffff;
+
+
+
+    --white:
+
+    #111;
+
+
+
+    --cream:
+
+    #222;
+
+
+
+    background:
+
+    #eee;
+
+
+}
+
+
+
+
+
+.light-mode .glass-card{
+
+
+    background:
+
+    rgba(255,255,255,.7);
+
+
+
+    color:
+
+    #111;
+
+
+}
+
+
+
+
+
+.light-mode p{
+
+
+    color:
+
+    #333;
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+                ANIMACIÓN SCROLL
+=======================================================*/
+
+
+.hidden{
+
+
+    opacity:
+
+    0;
+
+
+
+    transform:
+
+    translateY(40px);
+
+
+
+}
+
+
+
+.show-animation{
+
+
+    opacity:
+
+    1;
+
+
+
+    transform:
+
+    translateY(0);
+
+
+
+    transition:
+
+    1s ease;
+
+
+}
+
+
+
+
+
+
+
+/*======================================================
+                RESPONSIVE FINAL
+=======================================================*/
+
+
+@media(max-width:768px){
+
+
+
+.footer-buttons{
+
+
+    flex-direction:
+
+    column;
+
+
+
+    align-items:
+
+    center;
+
+
+}
+
+
+
+
+
+.footer-buttons button{
+
+
+    width:
+
+    90%;
+
+
+}
+
+
+
+
+
+#backToTop{
+
+
+    width:
+
+   45px;
+
+
+
+    height:
+
+   45px;
+
+
+
+    right:
+
+   20px;
+
+
+
+    bottom:
+
+   20px;
+
+
+}
+
+
+}
+
+
+
+
+
+/*======================================================
+                FIN DEL STYLE.CSS
+=======================================================*/
+/* PARTÍCULAS */
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+
+
+.particle{
+
+    position:absolute;
+
+    top:-20px;
+
+    width:8px;
+
+    height:8px;
+
+    background:#d4af37;
+
+    border-radius:50%;
+
+    animation:
+
+    fall linear infinite;
+
+}
+
+
+
+@keyframes fall{
+
+
+    to{
+
+        transform:
+
+        translateY(110vh);
+
+    }
+
+
+}
+/* BOTÓN MODO OSCURO */
+
+
+.theme-btn{
+
+
+    background:
+
+    transparent;
+
+
+    border:none;
+
+
+    color:
+
+    var(--gold);
+
+
+    font-size:
+
+    1.3rem;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.theme-btn:hover{
+
+
+    transform:
+
+    rotate(25deg)
+    scale(1.2);
+
+
+}
+@media(max-width:900px){
+
+
+.nav-links{
+
+
+    position:
+
+    fixed;
+
+
+    top:
+
+    80px;
+
+
+    right:
+
+    -100%;
+
+
+    width:
+
+    80%;
+
+
+    height:
+
+    100vh;
+
+
+    background:
+
+    rgba(0,0,0,.95);
+
+
+    flex-direction:
+
+    column;
+
+
+    align-items:
+
+    center;
+
+
+    padding-top:
+
+    50px;
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+.nav-links.active{
+
+
+    right:
+
+    0;
+
+
+}
+
+
+
+
+.menu-toggle{
+
+
+    display:block;
+
+
+}
+
 
 }
